@@ -1,0 +1,9 @@
+[WEBSITE]
+	[NEEDED]
+		sudo pip install selenium
+		sudo pip install html-testRunner
+	[EXECUTION]
+		python main.py
+	[REPORT]
+		all the reports are in the report/ folder
+	
