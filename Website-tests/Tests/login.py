@@ -3,12 +3,14 @@ import unittest
 import time
 from Pages.landingPage import landingPage
 from Pages.loginPage import loginPage
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 class LoginTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome("chromedriver")
+        cls.driver = webdriver.Chrome(ChromeDriverManager().install())
 
     def test_01_login_valid(self):
         self.driver.get("https://www.kwili.fr/")
@@ -70,4 +72,3 @@ class LoginTest(unittest.TestCase):
     def tearDownClass(cls):
         cls.driver.close()
         cls.driver.quit()
-
