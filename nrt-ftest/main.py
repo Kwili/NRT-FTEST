@@ -1,4 +1,4 @@
-import app
+import website_app
 
 if __name__ == '__main__':
-    app.run()
+    website_app.run()

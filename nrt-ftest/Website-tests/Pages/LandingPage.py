@@ -1,20 +1,20 @@
-class landingPage():
+class LandingPage:
 
     def __init__(self, driver):
         self.driver = driver
 
-        self.login_button_xpath             = "//*[@id=\"root\"]/div/div/div[1]/a[1]/input"
-        self.register_button_xpath          = "//*[@id=\"root\"]/div/div/div[1]/a[2]/input"
-        self.map_button_xpath               = "//*[@id=\"root\"]/div/div/div[1]/a[3]/input"
-        self.informations_button_xpath      = "//*[@id=\"root\"]/div/div/div[2]/div[1]/a"
-        self.image_background               = "//*[@id=\"root\"]/div/div/div[2]/div[1]"
-        self.image_demo                     = "//*[@id=\"root\"]/div/div/div[2]/div[3]/div/div[1]/img"
+        self.login_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/a[1]/input"
+        self.register_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/a[2]/input"
+        self.map_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/a[3]/input"
+        self.informations_button_xpath = "//*[@id=\"root\"]/div/div/div[2]/div[1]/a"
+        self.image_background = "//*[@id=\"root\"]/div/div/div[2]/div[1]"
+        self.image_demo = "//*[@id=\"root\"]/div/div/div[2]/div[3]/div/div[1]/img"
 
-        self.contact_name_textbox_xpath     = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/form/div/div[1]/input"
-        self.contact_mail_textbox_xpath     = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/form/div/div[2]/input"
-        self.contact_object_textbox_xpath   = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/form/div/div[3]/input"
-        self.contact_message_textbox_xpath  = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/form/textarea"
-        self.contact_send_button_xpath      = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/input"
+        self.contact_name_textbox_xpath = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/form/div/div[1]/input"
+        self.contact_mail_textbox_xpath = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/form/div/div[2]/input"
+        self.contact_object_textbox_xpath = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/form/div/div[3]/input"
+        self.contact_message_textbox_xpath = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/form/textarea"
+        self.contact_send_button_xpath = "//*[@id=\"ContactForm__ContactForm___HlTc\"]/input"
 
     def click_login(self):
         self.driver.find_element_by_xpath(self.login_button_xpath).click()

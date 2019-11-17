@@ -1,21 +1,21 @@
-class registerPage():
+class RegisterPage:
 
     def __init__(self, driver):
         self.driver = driver
 
-        self.register_button_xpath              = "//*[@id=\"root\"]/div/div/div/div/form/button[1]"
-        self.already_registered_button_xpath    = "//*[@id=\"root\"]/div/div/div/div/form/button[2]"
+        self.register_button_xpath = "//*[@id=\"root\"]/div/div/div/div/form/button[1]"
+        self.already_registered_button_xpath = "//*[@id=\"root\"]/div/div/div/div/form/button[2]"
 
-        self.error_message_xpath                = "/html/body/div[3]/div/div/div[1]"
-        self.error_button_xpath                 = "/html/body/div[3]/div/div/div[2]/button"
+        self.error_message_xpath = "/html/body/div[3]/div/div/div[1]"
+        self.error_button_xpath = "/html/body/div[3]/div/div/div[2]/button"
 
-        self.name_textbox_id                    = "name-input"
-        self.last_name_textbox_id               = "last_name-input"
-        self.birthday_textbox_id                = "date-input"
-        self.mail_textbox_id                    = "email-input"
-        self.pwd_textbox_id                     = "password-input"
-        self.confirm_pwd_textbox_id             = "password-input-confirmation"
-        self.person_type_id                     = "type-input"
+        self.name_textbox_id = "name-input"
+        self.last_name_textbox_id = "last_name-input"
+        self.birthday_textbox_id = "date-input"
+        self.mail_textbox_id = "email-input"
+        self.pwd_textbox_id = "password-input"
+        self.confirm_pwd_textbox_id = "password-input-confirmation"
+        self.person_type_id = "type-input"
 
     def click_register(self):
         self.driver.find_element_by_xpath(self.register_button_xpath).click()
@@ -70,4 +70,3 @@ class registerPage():
         message = self.check_error_message()
         self.click_error_button()
         return message
-        

@@ -1,22 +1,21 @@
 from selenium.common.exceptions import NoSuchElementException
-import time
 
-class mapPage():
+
+class MapPage:
 
     def __init__(self, driver):
         self.driver = driver
 
-        self.research_button_xpath              = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/div"
-        self.research_input_box_xpath           = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/div/form/input"
-        self.reset_research_button_xpath        = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/div/form/a"
-        self.zoom_in_button_xpath               = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[3]/div/a[1]"
-        self.zoom_out_button_xpath              = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[3]/div/a[2]"
-        self.geolocalisation_button_xpath       = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[2]/div[1]/a/span"
-        self.slider_button_xpath                = "//*[@id=\"root\"]/div/div/div[2]/span/span[203]"
-        self.slider_display_km_xpath            = "//*[@id=\"discrete-slider\"]"
-        
+        self.research_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/div"
+        self.research_input_box_xpath = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/div/form/input"
+        self.reset_research_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[1]/div/form/a"
+        self.zoom_in_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[3]/div/a[1]"
+        self.zoom_out_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[3]/div/a[2]"
+        self.geolocalisation_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[2]/div[1]/a/span"
+        self.slider_button_xpath = "//*[@id=\"root\"]/div/div/div[2]/span/span[203]"
+        self.slider_display_km_xpath = "//*[@id=\"discrete-slider\"]"
 
-        self.no_itinary_founded_button_xpath    = "/html/body/div[3]/div/div/div[3]/button"
+        self.no_itinary_founded_button_xpath = "/html/body/div[3]/div/div/div[3]/button"
 
     def no_ininary_founded_handler(self, xpath):
         try:

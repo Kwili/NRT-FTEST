@@ -1,12 +1,10 @@
-from selenium import webdriver
 import unittest
 import HtmlTestRunner
-
-from Tests.login import *
-from Tests.landing import *
-from Tests.register import *
-from Tests.map import *
-from Tests.home import *
+from Tests.login import LoginTest
+from Tests.landing import LandingTest
+from Tests.register import RegisterTest
+from Tests.map import MapTest
+from Tests.home import HomeTest
 
 
 def run():
@@ -18,6 +16,6 @@ def run():
         suite = loader.loadTestsFromTestCase(test_class)
         suites_list.append(suite)
     big_suite = unittest.TestSuite(suites_list)
-    runner = HtmlTestRunner.HTMLTestRunner(output="./report")
+    runner = HtmlTestRunner.HTMLTestRunner(output="nrt-ftest/report/website/")
     results = runner.run(big_suite)
     exit(0)

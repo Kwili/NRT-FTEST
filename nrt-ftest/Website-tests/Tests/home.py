@@ -1,9 +1,8 @@
-from selenium import webdriver
 import unittest
-import time
-from Pages.homePage import homePage
+from Pages.HomePage import HomePage
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
+
 
 class HomeTest(unittest.TestCase):
 
@@ -14,7 +13,7 @@ class HomeTest(unittest.TestCase):
     def test_01_home_check_logo(self):
         self.driver.get("https://www.kwili.fr/")
 
-        home = homePage(self.driver)
+        home = HomePage(self.driver)
         home.check_logo()
 
     @classmethod
