@@ -8,7 +8,8 @@ from Tests.home import HomeTest
 
 
 def run():
-    test_classes_to_run = [LandingTest, LoginTest, RegisterTest, MapTest, HomeTest]
+    # test_classes_to_run = [LandingTest, LoginTest, RegisterTest, MapTest, HomeTest]
+    test_classes_to_run = [LoginTest]
 
     loader = unittest.TestLoader()
     suites_list = []
