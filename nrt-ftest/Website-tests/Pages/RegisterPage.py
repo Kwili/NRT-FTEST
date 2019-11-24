@@ -1,3 +1,9 @@
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
+
+
 class RegisterPage:
 
     def __init__(self, driver):
@@ -25,9 +31,6 @@ class RegisterPage:
 
     def click_error_button(self):
         self.driver.find_element_by_xpath(self.error_button_xpath).click()
-
-    def check_error_message(self):
-        return self.driver.find_element_by_xpath(self.error_message_xpath).text
 
     def enter_name(self, name):
         self.driver.find_element_by_id(self.name_textbox_id).clear()
@@ -66,7 +69,14 @@ class RegisterPage:
         self.enter_confirm_pwd(confirm_pwd)
         self.enter_person_type(p_type)
 
-    def check_error(self):
-        message = self.check_error_message()
+    def check_error_message(self, error_msg):
+        try:
+            WebDriverWait(self.driver, 5).until(ec.text_to_be_present_in_element((By.XPATH, self.error_message_xpath), error_msg))
+        except TimeoutException:
+            return self.driver.find_element_by_xpath(self.error_message_xpath).text
+        return self.driver.find_element_by_xpath(self.error_message_xpath).text
+
+    def check_error(self, error_msg):
+        message = self.check_error_message(error_msg)
         self.click_error_button()
         return message

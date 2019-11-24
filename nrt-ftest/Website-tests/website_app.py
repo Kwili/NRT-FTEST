@@ -8,8 +8,7 @@ from Tests.home import HomeTest
 
 
 def run():
-    # test_classes_to_run = [LandingTest, LoginTest, RegisterTest, MapTest, HomeTest]
-    test_classes_to_run = [LoginTest]
+    test_classes_to_run = [LandingTest, LoginTest, RegisterTest, MapTest, HomeTest]
 
     loader = unittest.TestLoader()
     suites_list = []
@@ -18,5 +17,5 @@ def run():
         suites_list.append(suite)
     big_suite = unittest.TestSuite(suites_list)
     runner = HtmlTestRunner.HTMLTestRunner(output="nrt-ftest/report/website/")
-    results = runner.run(big_suite)
+    runner.run(big_suite)
     exit(0)
