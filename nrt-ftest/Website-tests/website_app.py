@@ -15,6 +15,6 @@ def run():
         suite = loader.loadTestsFromTestCase(test_class)
         suites_list.append(suite)
     big_suite = unittest.TestSuite(suites_list)
-    runner = HtmlTestRunner.HTMLTestRunner(output="nrt-ftest/report/website/")
+    runner = HtmlTestRunner.HTMLTestRunner(output="./report/website/")
     runner.run(big_suite)
     exit(0)
