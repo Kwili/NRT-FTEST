@@ -4,11 +4,10 @@ from Tests.login import LoginTest
 from Tests.landing import LandingTest
 from Tests.register import RegisterTest
 from Tests.map import MapTest
-from Tests.home import HomeTest
 
 
 def run():
-    test_classes_to_run = [LandingTest, LoginTest, RegisterTest, MapTest, HomeTest]
+    test_classes_to_run = [LandingTest, LoginTest, RegisterTest, MapTest]
 
     loader = unittest.TestLoader()
     suites_list = []

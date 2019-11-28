@@ -112,18 +112,6 @@ class RegisterTest(unittest.TestCase):
         register.click_register()
         self.assertEqual(register.check_error(error_msg), error_msg)
 
-    def test_10_register_person_type_is_empty(self):
-        error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
-
-        self.driver.get("https://www.kwili.fr/")
-
-        landing = LandingPage(self.driver)
-        landing.click_register()
-        register = RegisterPage(self.driver)
-        register.register("test", "person", "20081999", "test.person@testing.fr", "azerty", "azerty", "")
-        register.click_register()
-        self.assertEqual(register.check_error(error_msg), error_msg)
-
     def test_11_already_registered(self):
         self.driver.get("https://www.kwili.fr/")
 
