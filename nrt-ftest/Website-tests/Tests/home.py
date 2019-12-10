@@ -9,9 +9,10 @@ class HomeTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(ChromeDriverManager().install())
+        cls.url = "https://www.kwili.fr/"
 
     def test_01_home_check_logo(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         home = HomePage(self.driver)
         home.check_logo()

@@ -10,9 +10,10 @@ class LoginTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(ChromeDriverManager().install())
+        cls.url = "https://40.127.101.14/"
 
     def test_01_login_valid(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_login()
@@ -21,7 +22,7 @@ class LoginTest(unittest.TestCase):
 
     def test_02_login_no_email_and_no_pwd(self):
         error_msg = "Erreur : email manquant. Veuillez entrer votre adresse mail."
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_login()
@@ -31,7 +32,7 @@ class LoginTest(unittest.TestCase):
 
     def test_03_login_pwd_but_no_email(self):
         error_msg = "Erreur : email manquant. Veuillez entrer votre adresse mail."
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_login()
@@ -42,7 +43,7 @@ class LoginTest(unittest.TestCase):
 
     def test_04_login_email_but_no_pwd(self):
         error_msg = "Erreur : mot de passe manquant. Veuillez entrer votre mot de passe."
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_login()
@@ -53,7 +54,7 @@ class LoginTest(unittest.TestCase):
 
     # def test_05_login_invalid(self):
     #     error_msg = "Erreur : email et/ou mot de passe invalide."
-    #     self.driver.get("https://www.kwili.fr/")
+    #     self.driver.get(self.url)
     #
     #     landing = LandingPage(self.driver)
     #     landing.click_login()
@@ -64,7 +65,7 @@ class LoginTest(unittest.TestCase):
     #     self.assertEqual(login.check_error(error_msg), error_msg)
 
     def test_06_login_go_on_register(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_login()
