@@ -9,39 +9,40 @@ class LandingTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(ChromeDriverManager().install())
+        cls.url = "https://40.127.101.14/"
 
     def test_01_check_all_images_on_the_landingPage(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.check_all_images()
 
     def test_02_check_login_button(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_login()
 
     def test_03_check_register_button(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
 
     def test_04_check_map_button(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_map()
 
     def test_05_check_info_button(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_info()
 
     def test_06_contact_us(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.contact_us("testing", "test.person@testing.fr", "TEST automate", "ceci est un test")

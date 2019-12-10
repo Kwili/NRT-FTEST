@@ -10,10 +10,11 @@ class RegisterTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(ChromeDriverManager().install())
+        cls.url = "https://40.127.101.14/"
 
     def test_01_invalid_resgister_all_fileds_ared_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -22,7 +23,7 @@ class RegisterTest(unittest.TestCase):
         self.assertEqual(register.check_error(error_msg), error_msg)
 
     def test_02_register(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -32,7 +33,7 @@ class RegisterTest(unittest.TestCase):
 
     def test_03_register_pwd_are_differents(self):
         error_msg = "Erreur: veuillez entrer le même mot de passe."
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -44,7 +45,7 @@ class RegisterTest(unittest.TestCase):
     def test_04_register_name_is_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
 
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -55,7 +56,7 @@ class RegisterTest(unittest.TestCase):
 
     def test_05_resgister_last_name_is_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -67,7 +68,7 @@ class RegisterTest(unittest.TestCase):
     def test_06_register_date_is_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
 
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -79,7 +80,7 @@ class RegisterTest(unittest.TestCase):
     def test_07_register_mail_is_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
 
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -91,7 +92,7 @@ class RegisterTest(unittest.TestCase):
     def test_08_register_pwd_is_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
 
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -103,7 +104,7 @@ class RegisterTest(unittest.TestCase):
     def test_09_register_confirm_pwd_is_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
 
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()
@@ -113,7 +114,7 @@ class RegisterTest(unittest.TestCase):
         self.assertEqual(register.check_error(error_msg), error_msg)
 
     def test_11_already_registered(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_register()

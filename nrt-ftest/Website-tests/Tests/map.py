@@ -10,9 +10,10 @@ class MapTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(ChromeDriverManager().install())
+        cls.url = "https://40.127.101.14/"
 
     def test_01_map_zooming(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_map()
@@ -20,7 +21,7 @@ class MapTest(unittest.TestCase):
         map_page.zoom_in_and_out()
 
     def test_02_map_geolocalisation(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_map()
@@ -28,7 +29,7 @@ class MapTest(unittest.TestCase):
         map_page.geolocalisation_on_off()
 
     def test_03_set_slider_at_70km(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_map()
@@ -36,7 +37,7 @@ class MapTest(unittest.TestCase):
         self.assertEqual(map_page.move_km_slider(), "Rayon de la recherche: 5 km")
 
     def test_04_new_departure_point(self):
-        self.driver.get("https://www.kwili.fr/")
+        self.driver.get(self.url)
 
         landing = LandingPage(self.driver)
         landing.click_map()
