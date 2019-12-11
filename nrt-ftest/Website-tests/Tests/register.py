@@ -10,7 +10,7 @@ class RegisterTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(ChromeDriverManager().install())
-        cls.url = "https://40.127.101.14/"
+        cls.url = "https://localhost/"
 
     def test_01_invalid_resgister_all_fileds_ared_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."

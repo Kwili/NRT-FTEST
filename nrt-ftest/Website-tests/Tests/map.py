@@ -10,7 +10,7 @@ class MapTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(ChromeDriverManager().install())
-        cls.url = "https://40.127.101.14/"
+        cls.url = "https://localhost/"
 
     def test_01_map_zooming(self):
         self.driver.get(self.url)

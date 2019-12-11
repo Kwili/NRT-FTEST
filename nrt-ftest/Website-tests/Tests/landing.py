@@ -9,7 +9,7 @@ class LandingTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome(ChromeDriverManager().install())
-        cls.url = "https://40.127.101.14/"
+        cls.url = "https://localhost/"
 
     def test_01_check_all_images_on_the_landingPage(self):
         self.driver.get(self.url)
