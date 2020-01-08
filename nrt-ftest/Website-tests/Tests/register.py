@@ -9,7 +9,10 @@ class RegisterTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome(ChromeDriverManager().install())
+        options = webdriver.ChromeOptions()
+        options.add_argument('--ignore-certificate-errors')
+
+        cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
         cls.url = "https://localhost/"
 
     def test_01_invalid_resgister_all_fileds_ared_empty(self):

@@ -8,7 +8,10 @@ class HomeTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome(ChromeDriverManager().install())
+        options = webdriver.ChromeOptions()
+        options.add_argument('--ignore-certificate-errors')
+
+        cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
         cls.url = "https://www.kwili.fr/"
 
     def test_01_home_check_logo(self):
