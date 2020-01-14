@@ -13,7 +13,7 @@ class LoginTest(unittest.TestCase):
         options.add_argument('--ignore-certificate-errors')
 
         cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
-        cls.url = "https://localhost/"
+        cls.url = "http://localhost:80/"
 
     def test_01_login_valid(self):
         self.driver.get(self.url)

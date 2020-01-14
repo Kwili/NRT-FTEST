@@ -13,7 +13,7 @@ class RegisterTest(unittest.TestCase):
         options.add_argument('--ignore-certificate-errors')
 
         cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
-        cls.url = "https://localhost/"
+        cls.url = "http://localhost:80/"
 
     def test_01_invalid_resgister_all_fileds_ared_empty(self):
         error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."

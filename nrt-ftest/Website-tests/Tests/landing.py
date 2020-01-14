@@ -12,7 +12,7 @@ class LandingTest(unittest.TestCase):
         options.add_argument('--ignore-certificate-errors')
 
         cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
-        cls.url = "https://localhost/"
+        cls.url = "http://localhost:80/"
 
     def test_01_check_all_images_on_the_landingPage(self):
         self.driver.get(self.url)
