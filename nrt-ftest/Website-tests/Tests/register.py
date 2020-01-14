@@ -69,7 +69,7 @@ class RegisterTest(unittest.TestCase):
         self.assertEqual(register.check_error(error_msg), error_msg)
 
     def test_06_register_date_is_empty(self):
-        error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
+        error_msg = "Veuillez vérifier les informations saisies."
 
         self.driver.get(self.url)
 
@@ -105,7 +105,7 @@ class RegisterTest(unittest.TestCase):
         self.assertEqual(register.check_error(error_msg), error_msg)
 
     def test_09_register_confirm_pwd_is_empty(self):
-        error_msg = "Erreur: un ou plusieurs champs n'ont pas été remplis."
+        error_msg = "Erreur: veuillez entrer le même mot de passe."
 
         self.driver.get(self.url)
 

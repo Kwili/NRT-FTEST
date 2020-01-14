@@ -2,10 +2,11 @@ import unittest
 import HtmlTestRunner
 from Tests.loginMobile import LoginMobileTest
 from Tests.mapMobile import MapMobileTest
+from Tests.botMobile import BotMobileTest
 
 
 def run():
-    test_classes_to_run = [LoginMobileTest, MapMobileTest]
+    test_classes_to_run = [LoginMobileTest, MapMobileTest, BotMobileTest]
 
     loader = unittest.TestLoader()
     suites_list = []

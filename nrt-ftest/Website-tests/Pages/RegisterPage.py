@@ -15,13 +15,6 @@ class RegisterPage:
         self.error_message_xpath = "//div[3]/div/div/div[1]"
         self.error_button_xpath = "//div[3]/div/div/div[2]/button"
 
-        self.name_textbox_id = "name-input"
-        self.last_name_textbox_id = "last_name-input"
-        self.birthday_textbox_id = "date-input"
-        self.mail_textbox_id = "email-input"
-        self.pwd_textbox_id = "password-input"
-        self.confirm_pwd_textbox_id = "password-input-confirmation"
-
     def click_register(self):
         self.driver.find_element_by_xpath(self.register_button_xpath).click()
 
@@ -32,28 +25,28 @@ class RegisterPage:
         self.driver.find_element_by_xpath(self.error_button_xpath).click()
 
     def enter_name(self, name):
-        self.driver.find_element_by_id(self.name_textbox_id).clear()
-        self.driver.find_element_by_id(self.name_textbox_id).send_keys(name)
+        self.driver.find_element_by_xpath("//input[@field='name']").clear()
+        self.driver.find_element_by_xpath("//input[@field='name']").send_keys(name)
 
     def enter_last_name(self, last_name):
-        self.driver.find_element_by_id(self.last_name_textbox_id).clear()
-        self.driver.find_element_by_id(self.last_name_textbox_id).send_keys(last_name)
+        self.driver.find_element_by_xpath("//input[@field='last_name']").clear()
+        self.driver.find_element_by_xpath("//input[@field='last_name']").send_keys(last_name)
 
     def enter_birthday(self, date):
-        self.driver.find_element_by_id(self.birthday_textbox_id).clear()
-        self.driver.find_element_by_id(self.birthday_textbox_id).send_keys(date)
+        self.driver.find_element_by_xpath("//input[@type='date']").clear()
+        self.driver.find_element_by_xpath("//input[@type='date']").send_keys(date)
 
     def enter_mail(self, mail):
-        self.driver.find_element_by_id(self.mail_textbox_id).clear()
-        self.driver.find_element_by_id(self.mail_textbox_id).send_keys(mail)
+        self.driver.find_element_by_xpath("//input[@type='email']").clear()
+        self.driver.find_element_by_xpath("//input[@type='email']").send_keys(mail)
 
     def enter_pwd(self, pwd):
-        self.driver.find_element_by_id(self.pwd_textbox_id).clear()
-        self.driver.find_element_by_id(self.pwd_textbox_id).send_keys(pwd)
+        self.driver.find_element_by_xpath("//input[@placeholder='Mot de passe']").clear()
+        self.driver.find_element_by_xpath("//input[@placeholder='Mot de passe']").send_keys(pwd)
 
     def enter_confirm_pwd(self, pwd):
-        self.driver.find_element_by_id(self.confirm_pwd_textbox_id).clear()
-        self.driver.find_element_by_id(self.confirm_pwd_textbox_id).send_keys(pwd)
+        self.driver.find_element_by_xpath("//input[@placeholder='Confirmation du mot de passe']").clear()
+        self.driver.find_element_by_xpath("//input[@placeholder='Confirmation du mot de passe']").send_keys(pwd)
 
     def register(self, name, last_name, birthdate, mail, pwd, confirm_pwd, p_type):
         self.enter_name(name)
