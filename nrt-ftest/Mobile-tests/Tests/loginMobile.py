@@ -1,6 +1,7 @@
 import unittest
 from appium import webdriver
 from Screens.LoginScreen import LoginScreen
+from Screens.MapScreen import MapScreen
 
 
 class LoginMobileTest(unittest.TestCase):
@@ -15,6 +16,14 @@ class LoginMobileTest(unittest.TestCase):
     def test_01_No_Login(self):
         login_screen = LoginScreen(self.driver)
         login_screen.click_login()
+
+    def test_02_Loggin(self):
+        self.driver.reset()
+        login_screen = LoginScreen(self.driver)
+        login_screen.fill_id()
+        login_screen.click_login()
+        map_screen = MapScreen(self.driver)
+        map_screen.click_allow_geo()
 
     @classmethod
     def tearDownClass(cls):
