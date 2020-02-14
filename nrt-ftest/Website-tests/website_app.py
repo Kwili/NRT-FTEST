@@ -7,7 +7,7 @@ from Tests.map import MapTest
 
 
 def run():
-    test_classes_to_run = [LandingTest, LoginTest, RegisterTest]
+    test_classes_to_run = [LandingTest, LoginTest, RegisterTest, MapTest]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:

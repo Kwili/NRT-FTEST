@@ -5,7 +5,7 @@ class LandingPage:
 
         self.login_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/a[1]/input"
         self.register_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/a[2]/input"
-        self.map_button_xpath = "//*[@id=\"root\"]/div/div/div[1]/a[3]/input"
+        self.map_button_xpath = "//input[@href='/map']"
         self.informations_button_xpath = "//*[@id=\"root\"]/div/div/div[2]/div[1]/a"
         self.image_background = "//*[@id=\"root\"]/div/div/div[2]/div[1]"
         self.image_demo = "//*[@id=\"root\"]/div/div/div[2]/div[3]/div/div[1]/img"
