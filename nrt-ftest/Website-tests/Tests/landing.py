@@ -9,46 +9,27 @@ class LandingTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         options = webdriver.ChromeOptions()
-        options.add_argument('--ignore-certificate-errors')
+
+        # Enable when certificate bugs
+        # options.add_argument('--ignore-certificate-errors')
 
         cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
-        cls.url = "http://localhost/"
+        cls.url = "https://www.kwili.fr/landing"
 
-    def test_01_check_all_images_on_the_landingPage(self):
+    def test_check_navbar(self):
+        self.driver.get(self.url)
+        landing = LandingPage(self.driver)
+        home_url = self.url[:-7]
+
+        landing.click_home()
+        self.assertEqual(self.driver.current_url, home_url)
         self.driver.get(self.url)
 
-        landing = LandingPage(self.driver)
-        landing.check_all_images()
-
-    def test_02_check_login_button(self):
-        self.driver.get(self.url)
-
-        landing = LandingPage(self.driver)
-        landing.click_login()
-
-    def test_03_check_register_button(self):
-        self.driver.get(self.url)
-
-        landing = LandingPage(self.driver)
-        landing.click_register()
-
-    def test_04_check_map_button(self):
-        self.driver.get(self.url)
-
-        landing = LandingPage(self.driver)
         landing.click_map()
-
-    def test_05_check_info_button(self):
+        self.assertEqual(self.driver.current_url, f"{home_url}map")
         self.driver.get(self.url)
 
-        landing = LandingPage(self.driver)
-        landing.click_info()
-
-    def test_06_contact_us(self):
-        self.driver.get(self.url)
-
-        landing = LandingPage(self.driver)
-        landing.contact_us("testing", "test.person@testing.fr", "TEST automate", "ceci est un test")
+        landing.click_app_link()
 
     @classmethod
     def tearDownClass(cls):
