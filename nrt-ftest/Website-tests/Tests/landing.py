@@ -61,7 +61,7 @@ class LandingTest(unittest.TestCase):
 
     def test_chat_landing(self):
         """
-        Chat widget in landing test.
+        Chat widget in landing.
         """
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
