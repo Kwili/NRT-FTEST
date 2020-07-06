@@ -1,14 +1,12 @@
 import unittest
 import HtmlTestRunner
-from Tests.login import LoginTest
 from Tests.landing import LandingTest
-from Tests.register import RegisterTest
+from Tests.home import HomeTest
 from Tests.map import MapTest
 
 
 def run():
-    # test_classes_to_run = [LandingTest, LoginTest, RegisterTest, MapTest]
-    test_classes_to_run = [LandingTest]
+    test_classes_to_run = [HomeTest, LandingTest]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:
