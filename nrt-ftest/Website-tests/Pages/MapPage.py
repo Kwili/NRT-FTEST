@@ -10,6 +10,7 @@ class MapPage:
 
     def write_position(self):
         sleep(2)
+        # TODO: Remove sleep function
         self.driver.find_element_by_xpath("//input[@type='text']").send_keys("1 rue rivoli")
         self.driver.find_element_by_xpath("//span[@class='pac-matched']").click()
 
@@ -17,7 +18,7 @@ class MapPage:
         self.driver.find_element_by_xpath("//div[@tabindex='0']/div[3]/div/div/div[2]").click()
 
     def _click_transport(self, i):
-        self.driver.find_element_by_xpath(f"//div[@class='Map__travelModeButtonsWrapper__2E8-Q']/div[{i}]").click()
+        self.driver.find_element_by_xpath(f"//div[@class='travelModeButtonsWrapper']/div[{i}]").click()
 
     def click_bus(self):
         self._click_transport(1)
@@ -35,13 +36,10 @@ class MapPage:
         self.driver.find_element_by_xpath("//button[@title='Zoom arrière']").click()
 
     def move_slider(self, offset):
-        slider_xpath = "//span[@class='MuiSlider-thumb MuiSlider-thumbColorPrimary PrivateValueLabel-thumb-21']"
+        slider_xpath = "//span[@class='MuiSlider-thumb MuiSlider-thumbColorPrimary jss21']"
         slider = self.driver.find_element_by_xpath(slider_xpath)
         move = ActionChains(self.driver)
         move.click_and_hold(slider).move_by_offset(offset, 0).release().perform()
-
-    def click_home(self):
-        self.driver.find_element_by_xpath("//a[@class='Map__homeButton__1rRzt']").click()
 
     def no_ininary_founded_handler(self, xpath):
         try:
