@@ -11,3 +11,4 @@ requests==2.22.0
 selenium==3.141.0
 urllib3==1.25.7
 webdriver-manager==2.3.0
+Appium-Python-Client==1.0.2

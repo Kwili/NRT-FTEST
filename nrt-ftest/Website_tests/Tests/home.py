@@ -1,5 +1,5 @@
 import unittest
-from Pages.HomePage import HomePage
+from Website_tests.Pages.HomePage import HomePage
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 

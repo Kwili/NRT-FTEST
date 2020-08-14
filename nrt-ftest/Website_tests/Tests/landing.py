@@ -1,5 +1,5 @@
 import unittest
-from Pages.LandingPage import LandingPage
+from Website_tests.Pages.LandingPage import LandingPage
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 

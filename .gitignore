@@ -1,4 +1,4 @@
-nrt-ftest/Website-tests/report
+nrt-ftest/Website_tests/report
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

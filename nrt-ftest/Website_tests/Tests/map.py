@@ -2,7 +2,7 @@ import unittest
 from time import sleep
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-from Pages.MapPage import MapPage
+from Website_tests.Pages.MapPage import MapPage
 
 
 class MapTest(unittest.TestCase):

@@ -1,13 +1,12 @@
 import unittest
 import HtmlTestRunner
-from Tests.loginMobile import LoginMobileTest
-from Tests.mapMobile import MapMobileTest
-from Tests.botMobile import BotMobileTest
-from Tests.registerMobile import RegisterMobileTest
+from Website_tests.Tests.landing import LandingTest
+from Website_tests.Tests.home import HomeTest
+from Website_tests.Tests.map import MapTest
 
 
 def run():
-    test_classes_to_run = [LoginMobileTest, MapMobileTest, BotMobileTest]
+    test_classes_to_run = [HomeTest, LandingTest, MapTest]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:
@@ -16,3 +15,4 @@ def run():
     big_suite = unittest.TestSuite(suites_list)
     runner = HtmlTestRunner.HTMLTestRunner(output="./report/website/")
     runner.run(big_suite)
+    exit(0)

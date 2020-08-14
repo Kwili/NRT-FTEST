@@ -1,7 +1,7 @@
 import unittest
 from appium import webdriver
-from Screens.LoginScreen import LoginScreen
-from Screens.MapScreen import MapScreen
+from Mobile_tests.Screens.LoginScreen import LoginScreen
+from Mobile_tests.Screens.MapScreen import MapScreen
 
 
 class MapMobileTest(unittest.TestCase):
