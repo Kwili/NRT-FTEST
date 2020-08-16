@@ -33,9 +33,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class LandingTest(unittest.TestCase):
-    &#34;&#34;&#34;Landing Page Test.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Classe LandingTest.
+
+    Teste les différents élements de la page /landing.
+    &#34;&#34;&#34;
     @classmethod
     def setUpClass(cls):
+        &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -46,7 +51,7 @@ class LandingTest(unittest.TestCase):
 
     def test_check_navbar(self):
         &#34;&#34;&#34;
-        Navbar tests.
+        Testes les différents boutons de la navbar.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -73,7 +78,7 @@ class LandingTest(unittest.TestCase):
 
     def test_apercu(self):
         &#34;&#34;&#34;
-        Apercu section tests.
+        Teste la section aperçu.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -89,7 +94,7 @@ class LandingTest(unittest.TestCase):
 
     def test_chat_landing(self):
         &#34;&#34;&#34;
-        Chat widget in landing.
+        Teste le chat widget de la landing page.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -99,6 +104,7 @@ class LandingTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
         cls.driver.close()
         cls.driver.quit()</code></pre>
 </details>
@@ -117,7 +123,8 @@ class LandingTest(unittest.TestCase):
 <span>(</span><span>methodName='runTest')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Landing Page Test.</p>
+<div class="desc"><p>Classe LandingTest.</p>
+<p>Teste les différents élements de la page /landing.</p>
 <p>Create an instance of the class that will use the named test
 method when executed. Raises a ValueError if the instance does
 not have a method with the specified name.</p></div>
@@ -126,9 +133,14 @@ not have a method with the specified name.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class LandingTest(unittest.TestCase):
-    &#34;&#34;&#34;Landing Page Test.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Classe LandingTest.
+
+    Teste les différents élements de la page /landing.
+    &#34;&#34;&#34;
     @classmethod
     def setUpClass(cls):
+        &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -139,7 +151,7 @@ not have a method with the specified name.</p></div>
 
     def test_check_navbar(self):
         &#34;&#34;&#34;
-        Navbar tests.
+        Testes les différents boutons de la navbar.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -166,7 +178,7 @@ not have a method with the specified name.</p></div>
 
     def test_apercu(self):
         &#34;&#34;&#34;
-        Apercu section tests.
+        Teste la section aperçu.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -182,7 +194,7 @@ not have a method with the specified name.</p></div>
 
     def test_chat_landing(self):
         &#34;&#34;&#34;
-        Chat widget in landing.
+        Teste le chat widget de la landing page.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -192,6 +204,7 @@ not have a method with the specified name.</p></div>
 
     @classmethod
     def tearDownClass(cls):
+        &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
         cls.driver.close()
         cls.driver.quit()</code></pre>
 </details>
@@ -205,13 +218,14 @@ not have a method with the specified name.</p></div>
 <span>def <span class="ident">setUpClass</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Hook method for setting up class fixture before running tests in the class.</p></div>
+<div class="desc"><p>Charge le drive Chrome.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
 def setUpClass(cls):
+    &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
     options = webdriver.ChromeOptions()
 
     # Enable when certificate bugs
@@ -225,13 +239,14 @@ def setUpClass(cls):
 <span>def <span class="ident">tearDownClass</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Hook method for deconstructing the class fixture after running all tests in the class.</p></div>
+<div class="desc"><p>Ferme le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
 def tearDownClass(cls):
+    &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
     cls.driver.close()
     cls.driver.quit()</code></pre>
 </details>
@@ -243,14 +258,14 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_apercu</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Apercu section tests.</p></div>
+<div class="desc"><p>Teste la section aperçu.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_apercu(self):
     &#34;&#34;&#34;
-    Apercu section tests.
+    Teste la section aperçu.
     &#34;&#34;&#34;
     self.driver.get(self.url)
     landing = LandingPage(self.driver)
@@ -269,14 +284,14 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_chat_landing</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Chat widget in landing.</p></div>
+<div class="desc"><p>Teste le chat widget de la landing page.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_chat_landing(self):
     &#34;&#34;&#34;
-    Chat widget in landing.
+    Teste le chat widget de la landing page.
     &#34;&#34;&#34;
     self.driver.get(self.url)
     landing = LandingPage(self.driver)
@@ -289,14 +304,14 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_check_navbar</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Navbar tests.</p></div>
+<div class="desc"><p>Testes les différents boutons de la navbar.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_check_navbar(self):
     &#34;&#34;&#34;
-    Navbar tests.
+    Testes les différents boutons de la navbar.
     &#34;&#34;&#34;
     self.driver.get(self.url)
     landing = LandingPage(self.driver)

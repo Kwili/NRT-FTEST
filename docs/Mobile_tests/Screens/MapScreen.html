@@ -27,38 +27,56 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class MapScreen:
+    &#34;&#34;&#34;
+    Classe MapScreen.
+
+    Recherche les différents élements de l&#39;écran de la map à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_allow_geo(self):
+        &#34;&#34;&#34;Clique sur autoriser la géolocalisation.&#34;&#34;&#34;
         self.driver.find_element_by_id(&#34;com.android.permissioncontroller:id/permission_allow_always_button&#34;).click()
 
     def click_rechercher(self):
+        &#34;&#34;&#34;Clique sur le bouton rechercher.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Rechercher&#39;]&#34;).click()
 
     def click_transport(self):
+        &#34;&#34;&#34;Clique sur le bouton transport.&#34;&#34;&#34;
         self.driver.find_element_by_class_name(&#34;android.widget.Spinner&#34;).click()
 
     def choose_transport(self, index):
+        &#34;&#34;&#34;Clique sur le transport choisi.
+        :param index: (int) index du transport choisi.
+        &#34;&#34;&#34;
         self.driver.find_element_by_xpath(f&#34;(//android.widget.CheckedTextView)[{index}]&#34;).click()
 
     def has_found_itinary(self):
+        &#34;&#34;&#34;Element apparaissant lorsqu&#39;un itinéraire a été trouvé.&#34;&#34;&#34;
         return self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;Distance&#39;)]&#34;).click()
 
     def click_votre_position(self):
+        &#34;&#34;&#34;Clique sur le bouton &#34;Votre position&#34;.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;Votre&#39;)]&#34;).click()
 
     def write_position(self, location):
+        &#34;&#34;&#34;Ecris et envoit la position.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.EditText[contains(@text,&#39;Votre&#39;)]&#34;).send_keys(location)
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;3 Avenue Montaigne, Paris&#39;)]&#34;).click()
 
     def click_plus(self):
+        &#34;&#34;&#34;Clique sur l&#39;element &#34;+&#34;.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;+&#39;]&#34;).click()
 
     def click_najma(self):
+        &#34;&#34;&#34;Clique sur najma.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Najma&#39;]&#34;).click()
 
     def click_return(self):
+        &#34;&#34;&#34;Clique sur le retour.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.ImageView&#34;).click()</code></pre>
 </details>
 </section>
@@ -76,44 +94,64 @@
 <span>(</span><span>driver)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Classe MapScreen.</p>
+<p>Recherche les différents élements de l'écran de la map à tester.</p>
+<p>Charge le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class MapScreen:
+    &#34;&#34;&#34;
+    Classe MapScreen.
+
+    Recherche les différents élements de l&#39;écran de la map à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_allow_geo(self):
+        &#34;&#34;&#34;Clique sur autoriser la géolocalisation.&#34;&#34;&#34;
         self.driver.find_element_by_id(&#34;com.android.permissioncontroller:id/permission_allow_always_button&#34;).click()
 
     def click_rechercher(self):
+        &#34;&#34;&#34;Clique sur le bouton rechercher.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Rechercher&#39;]&#34;).click()
 
     def click_transport(self):
+        &#34;&#34;&#34;Clique sur le bouton transport.&#34;&#34;&#34;
         self.driver.find_element_by_class_name(&#34;android.widget.Spinner&#34;).click()
 
     def choose_transport(self, index):
+        &#34;&#34;&#34;Clique sur le transport choisi.
+        :param index: (int) index du transport choisi.
+        &#34;&#34;&#34;
         self.driver.find_element_by_xpath(f&#34;(//android.widget.CheckedTextView)[{index}]&#34;).click()
 
     def has_found_itinary(self):
+        &#34;&#34;&#34;Element apparaissant lorsqu&#39;un itinéraire a été trouvé.&#34;&#34;&#34;
         return self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;Distance&#39;)]&#34;).click()
 
     def click_votre_position(self):
+        &#34;&#34;&#34;Clique sur le bouton &#34;Votre position&#34;.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;Votre&#39;)]&#34;).click()
 
     def write_position(self, location):
+        &#34;&#34;&#34;Ecris et envoit la position.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.EditText[contains(@text,&#39;Votre&#39;)]&#34;).send_keys(location)
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;3 Avenue Montaigne, Paris&#39;)]&#34;).click()
 
     def click_plus(self):
+        &#34;&#34;&#34;Clique sur l&#39;element &#34;+&#34;.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;+&#39;]&#34;).click()
 
     def click_najma(self):
+        &#34;&#34;&#34;Clique sur najma.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Najma&#39;]&#34;).click()
 
     def click_return(self):
+        &#34;&#34;&#34;Clique sur le retour.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.ImageView&#34;).click()</code></pre>
 </details>
 <h3>Methods</h3>
@@ -122,12 +160,16 @@
 <span>def <span class="ident">choose_transport</span></span>(<span>self, index)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le transport choisi.
+:param index: (int) index du transport choisi.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def choose_transport(self, index):
+    &#34;&#34;&#34;Clique sur le transport choisi.
+    :param index: (int) index du transport choisi.
+    &#34;&#34;&#34;
     self.driver.find_element_by_xpath(f&#34;(//android.widget.CheckedTextView)[{index}]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -135,12 +177,13 @@
 <span>def <span class="ident">click_allow_geo</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur autoriser la géolocalisation.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_allow_geo(self):
+    &#34;&#34;&#34;Clique sur autoriser la géolocalisation.&#34;&#34;&#34;
     self.driver.find_element_by_id(&#34;com.android.permissioncontroller:id/permission_allow_always_button&#34;).click()</code></pre>
 </details>
 </dd>
@@ -148,12 +191,13 @@
 <span>def <span class="ident">click_najma</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur najma.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_najma(self):
+    &#34;&#34;&#34;Clique sur najma.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Najma&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -161,12 +205,13 @@
 <span>def <span class="ident">click_plus</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur l'element "+".</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_plus(self):
+    &#34;&#34;&#34;Clique sur l&#39;element &#34;+&#34;.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;+&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -174,12 +219,13 @@
 <span>def <span class="ident">click_rechercher</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le bouton rechercher.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_rechercher(self):
+    &#34;&#34;&#34;Clique sur le bouton rechercher.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Rechercher&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -187,12 +233,13 @@
 <span>def <span class="ident">click_return</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le retour.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_return(self):
+    &#34;&#34;&#34;Clique sur le retour.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//android.widget.ImageView&#34;).click()</code></pre>
 </details>
 </dd>
@@ -200,12 +247,13 @@
 <span>def <span class="ident">click_transport</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le bouton transport.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_transport(self):
+    &#34;&#34;&#34;Clique sur le bouton transport.&#34;&#34;&#34;
     self.driver.find_element_by_class_name(&#34;android.widget.Spinner&#34;).click()</code></pre>
 </details>
 </dd>
@@ -213,12 +261,13 @@
 <span>def <span class="ident">click_votre_position</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le bouton "Votre position".</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_votre_position(self):
+    &#34;&#34;&#34;Clique sur le bouton &#34;Votre position&#34;.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;Votre&#39;)]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -226,12 +275,13 @@
 <span>def <span class="ident">has_found_itinary</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Element apparaissant lorsqu'un itinéraire a été trouvé.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def has_found_itinary(self):
+    &#34;&#34;&#34;Element apparaissant lorsqu&#39;un itinéraire a été trouvé.&#34;&#34;&#34;
     return self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;Distance&#39;)]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -239,12 +289,13 @@
 <span>def <span class="ident">write_position</span></span>(<span>self, location)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Ecris et envoit la position.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def write_position(self, location):
+    &#34;&#34;&#34;Ecris et envoit la position.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//android.widget.EditText[contains(@text,&#39;Votre&#39;)]&#34;).send_keys(location)
     self.driver.find_element_by_xpath(&#34;//android.widget.TextView[contains(@text,&#39;3 Avenue Montaigne, Paris&#39;)]&#34;).click()</code></pre>
 </details>

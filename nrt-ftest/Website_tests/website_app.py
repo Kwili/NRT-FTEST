@@ -6,6 +6,11 @@ from Website_tests.Tests.map import MapTest
 
 
 def run():
+    """
+    Function run de Website_tests.
+
+    Lance les classes de tests spécifiées.
+    """
     test_classes_to_run = [HomeTest, LandingTest, MapTest]
     loader = unittest.TestLoader()
     suites_list = []

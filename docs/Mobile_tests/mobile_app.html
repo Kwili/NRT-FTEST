@@ -28,13 +28,17 @@
 </summary>
 <pre><code class="python">import unittest
 import HtmlTestRunner
-from Mobile_tests.Tests.loginMobile import LoginMobileTest
 from Mobile_tests.Tests.mapMobile import MapMobileTest
 from Mobile_tests.Tests.botMobile import BotMobileTest
 
 
 def run():
-    test_classes_to_run = [LoginMobileTest, MapMobileTest, BotMobileTest]
+    &#34;&#34;&#34;
+    Function run de Mobile_tests.
+
+    Lance les classes de tests spécifiées.
+    &#34;&#34;&#34;
+    test_classes_to_run = [MapMobileTest, BotMobileTest]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:
@@ -56,13 +60,19 @@ def run():
 <span>def <span class="ident">run</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Function run de Mobile_tests.</p>
+<p>Lance les classes de tests spécifiées.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def run():
-    test_classes_to_run = [LoginMobileTest, MapMobileTest, BotMobileTest]
+    &#34;&#34;&#34;
+    Function run de Mobile_tests.
+
+    Lance les classes de tests spécifiées.
+    &#34;&#34;&#34;
+    test_classes_to_run = [MapMobileTest, BotMobileTest]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:

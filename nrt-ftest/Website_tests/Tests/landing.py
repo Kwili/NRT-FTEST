@@ -5,9 +5,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class LandingTest(unittest.TestCase):
-    """Landing Page Test."""
+    """
+    Classe LandingTest.
+
+    Teste les différents élements de la page /landing.
+    """
     @classmethod
     def setUpClass(cls):
+        """Charge le drive Chrome."""
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -18,7 +23,7 @@ class LandingTest(unittest.TestCase):
 
     def test_check_navbar(self):
         """
-        Navbar tests.
+        Testes les différents boutons de la navbar.
         """
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -45,7 +50,7 @@ class LandingTest(unittest.TestCase):
 
     def test_apercu(self):
         """
-        Apercu section tests.
+        Teste la section aperçu.
         """
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -61,7 +66,7 @@ class LandingTest(unittest.TestCase):
 
     def test_chat_landing(self):
         """
-        Chat widget in landing.
+        Teste le chat widget de la landing page.
         """
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
@@ -71,5 +76,6 @@ class LandingTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        """Ferme le driver."""
         cls.driver.close()
         cls.driver.quit()

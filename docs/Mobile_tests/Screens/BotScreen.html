@@ -27,13 +27,24 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class BotScreen:
+    &#34;&#34;&#34;
+    Classe BotScreen.
+
+    Recherche les différents élements de l&#39;écran du chat bot à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_bot_tab(self):
+        &#34;&#34;&#34;Clique sur le bouton du chat bot&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Bot&#39;)]&#34;).click()
 
     def send_text(self, text):
+        &#34;&#34;&#34;
+        Ecris et envoie du texte sur le chat bot.
+        :param text: (str) Texte à envoyer
+        &#34;&#34;&#34;
         self.driver.find_element_by_class_name(&#34;android.widget.EditText&#34;).send_keys(text)
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Send&#39;]&#34;).click()</code></pre>
 </details>
@@ -52,19 +63,32 @@
 <span>(</span><span>driver)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Classe BotScreen.</p>
+<p>Recherche les différents élements de l'écran du chat bot à tester.</p>
+<p>Charge le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class BotScreen:
+    &#34;&#34;&#34;
+    Classe BotScreen.
+
+    Recherche les différents élements de l&#39;écran du chat bot à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_bot_tab(self):
+        &#34;&#34;&#34;Clique sur le bouton du chat bot&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Bot&#39;)]&#34;).click()
 
     def send_text(self, text):
+        &#34;&#34;&#34;
+        Ecris et envoie du texte sur le chat bot.
+        :param text: (str) Texte à envoyer
+        &#34;&#34;&#34;
         self.driver.find_element_by_class_name(&#34;android.widget.EditText&#34;).send_keys(text)
         self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Send&#39;]&#34;).click()</code></pre>
 </details>
@@ -74,12 +98,13 @@
 <span>def <span class="ident">click_bot_tab</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le bouton du chat bot</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_bot_tab(self):
+    &#34;&#34;&#34;Clique sur le bouton du chat bot&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Bot&#39;)]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -87,12 +112,17 @@
 <span>def <span class="ident">send_text</span></span>(<span>self, text)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Ecris et envoie du texte sur le chat bot.
+:param text: (str) Texte à envoyer</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def send_text(self, text):
+    &#34;&#34;&#34;
+    Ecris et envoie du texte sur le chat bot.
+    :param text: (str) Texte à envoyer
+    &#34;&#34;&#34;
     self.driver.find_element_by_class_name(&#34;android.widget.EditText&#34;).send_keys(text)
     self.driver.find_element_by_xpath(&#34;//android.widget.TextView[@text=&#39;Send&#39;]&#34;).click()</code></pre>
 </details>
