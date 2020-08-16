@@ -6,8 +6,14 @@ from Website_tests.Pages.MapPage import MapPage
 
 
 class MapTest(unittest.TestCase):
+    """
+    Classe MapTest.
+
+    Teste les différents élements de la page /map.
+    """
     @classmethod
     def setUpClass(cls):
+        """Charge le drive Chrome."""
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -18,9 +24,9 @@ class MapTest(unittest.TestCase):
 
     def test_find_itinary(self):
         """
-        Test find itinary.
+        Teste l'itinéraire.
 
-        Write adress and click on all tranport available.
+        Ecris l'adresse et clique sur les transports dispnibles.
         """
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -41,9 +47,9 @@ class MapTest(unittest.TestCase):
 
     def test_zoom(self):
         """
-        Test map zoom.
+        Teste le zoom.
 
-        Check that the user can zoom.
+        Zoom de différentes valeurs.
         """
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -76,7 +82,7 @@ class MapTest(unittest.TestCase):
         """
         Test radius.
 
-        Test radius slider.
+        Test le radius slider.
         """
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -90,5 +96,6 @@ class MapTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        """Ferme le driver."""
         cls.driver.close()
         cls.driver.quit()

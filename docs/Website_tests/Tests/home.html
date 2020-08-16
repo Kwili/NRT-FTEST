@@ -33,10 +33,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class HomeTest(unittest.TestCase):
-    &#34;&#34;&#34;Home Page Test.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Classe HomeTest.
+
+    Teste les différents élements de la page d&#39;accueil.
+    &#34;&#34;&#34;
 
     @classmethod
     def setUpClass(cls):
+        &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -46,27 +51,21 @@ class HomeTest(unittest.TestCase):
         cls.url = &#34;https://www.kwili.fr/&#34;
 
     def test_chat_link(self):
-        &#34;&#34;&#34;
-        test chat link.
-        &#34;&#34;&#34;
+        &#34;&#34;&#34;teste le lien du chat.&#34;&#34;&#34;
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_chat_card()
         self.assertEqual(self.driver.current_url, self.url)
 
     def test_map_link(self):
-        &#34;&#34;&#34;
-        test map link.
-        &#34;&#34;&#34;
+        &#34;&#34;&#34;test le lien de la map.&#34;&#34;&#34;
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_map_card()
         self.assertEqual(self.driver.current_url, f&#34;{self.url}map&#34;)
 
     def test_landing_link(self):
-        &#34;&#34;&#34;
-        test landing link.
-        &#34;&#34;&#34;
+        &#34;&#34;&#34;teste le lien de la landing.&#34;&#34;&#34;
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_landing_button()
@@ -74,6 +73,7 @@ class HomeTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
         cls.driver.close()
         cls.driver.quit()</code></pre>
 </details>
@@ -92,7 +92,8 @@ class HomeTest(unittest.TestCase):
 <span>(</span><span>methodName='runTest')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Home Page Test.</p>
+<div class="desc"><p>Classe HomeTest.</p>
+<p>Teste les différents élements de la page d'accueil.</p>
 <p>Create an instance of the class that will use the named test
 method when executed. Raises a ValueError if the instance does
 not have a method with the specified name.</p></div>
@@ -101,10 +102,15 @@ not have a method with the specified name.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class HomeTest(unittest.TestCase):
-    &#34;&#34;&#34;Home Page Test.&#34;&#34;&#34;
+    &#34;&#34;&#34;
+    Classe HomeTest.
+
+    Teste les différents élements de la page d&#39;accueil.
+    &#34;&#34;&#34;
 
     @classmethod
     def setUpClass(cls):
+        &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -114,27 +120,21 @@ not have a method with the specified name.</p></div>
         cls.url = &#34;https://www.kwili.fr/&#34;
 
     def test_chat_link(self):
-        &#34;&#34;&#34;
-        test chat link.
-        &#34;&#34;&#34;
+        &#34;&#34;&#34;teste le lien du chat.&#34;&#34;&#34;
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_chat_card()
         self.assertEqual(self.driver.current_url, self.url)
 
     def test_map_link(self):
-        &#34;&#34;&#34;
-        test map link.
-        &#34;&#34;&#34;
+        &#34;&#34;&#34;test le lien de la map.&#34;&#34;&#34;
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_map_card()
         self.assertEqual(self.driver.current_url, f&#34;{self.url}map&#34;)
 
     def test_landing_link(self):
-        &#34;&#34;&#34;
-        test landing link.
-        &#34;&#34;&#34;
+        &#34;&#34;&#34;teste le lien de la landing.&#34;&#34;&#34;
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_landing_button()
@@ -142,6 +142,7 @@ not have a method with the specified name.</p></div>
 
     @classmethod
     def tearDownClass(cls):
+        &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
         cls.driver.close()
         cls.driver.quit()</code></pre>
 </details>
@@ -155,13 +156,14 @@ not have a method with the specified name.</p></div>
 <span>def <span class="ident">setUpClass</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Hook method for setting up class fixture before running tests in the class.</p></div>
+<div class="desc"><p>Charge le drive Chrome.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
 def setUpClass(cls):
+    &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
     options = webdriver.ChromeOptions()
 
     # Enable when certificate bugs
@@ -175,13 +177,14 @@ def setUpClass(cls):
 <span>def <span class="ident">tearDownClass</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Hook method for deconstructing the class fixture after running all tests in the class.</p></div>
+<div class="desc"><p>Ferme le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
 def tearDownClass(cls):
+    &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
     cls.driver.close()
     cls.driver.quit()</code></pre>
 </details>
@@ -193,15 +196,13 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_chat_link</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>test chat link.</p></div>
+<div class="desc"><p>teste le lien du chat.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_chat_link(self):
-    &#34;&#34;&#34;
-    test chat link.
-    &#34;&#34;&#34;
+    &#34;&#34;&#34;teste le lien du chat.&#34;&#34;&#34;
     self.driver.get(self.url)
     home = HomePage(self.driver)
     home.click_chat_card()
@@ -212,15 +213,13 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_landing_link</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>test landing link.</p></div>
+<div class="desc"><p>teste le lien de la landing.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_landing_link(self):
-    &#34;&#34;&#34;
-    test landing link.
-    &#34;&#34;&#34;
+    &#34;&#34;&#34;teste le lien de la landing.&#34;&#34;&#34;
     self.driver.get(self.url)
     home = HomePage(self.driver)
     home.click_landing_button()
@@ -231,15 +230,13 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_map_link</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>test map link.</p></div>
+<div class="desc"><p>test le lien de la map.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_map_link(self):
-    &#34;&#34;&#34;
-    test map link.
-    &#34;&#34;&#34;
+    &#34;&#34;&#34;test le lien de la map.&#34;&#34;&#34;
     self.driver.get(self.url)
     home = HomePage(self.driver)
     home.click_map_card()

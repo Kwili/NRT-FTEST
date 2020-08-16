@@ -27,17 +27,25 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class HomePage:
+    &#34;&#34;&#34;
+    Classe HomePage.
 
+    Recherche les différents élements de la page d&#39;accueil à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_chat_card(self):
+        &#34;&#34;&#34;Clique sur la carte du chat.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//button[@id=&#39;chat&#39;]&#34;).click()
 
     def click_map_card(self):
+        &#34;&#34;&#34;Clique sur la carte de la map.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//a[@id=&#39;map&#39;]&#34;).click()
 
     def click_landing_button(self):
+        &#34;&#34;&#34;Clique sur le bouton de la landing.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//a[@class=&#39;landingLink&#39;]&#34;).click()</code></pre>
 </details>
 </section>
@@ -55,23 +63,33 @@
 <span>(</span><span>driver)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Classe HomePage.</p>
+<p>Recherche les différents élements de la page d'accueil à tester.</p>
+<p>Charge le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class HomePage:
+    &#34;&#34;&#34;
+    Classe HomePage.
 
+    Recherche les différents élements de la page d&#39;accueil à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_chat_card(self):
+        &#34;&#34;&#34;Clique sur la carte du chat.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//button[@id=&#39;chat&#39;]&#34;).click()
 
     def click_map_card(self):
+        &#34;&#34;&#34;Clique sur la carte de la map.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//a[@id=&#39;map&#39;]&#34;).click()
 
     def click_landing_button(self):
+        &#34;&#34;&#34;Clique sur le bouton de la landing.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//a[@class=&#39;landingLink&#39;]&#34;).click()</code></pre>
 </details>
 <h3>Methods</h3>
@@ -80,12 +98,13 @@
 <span>def <span class="ident">click_chat_card</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur la carte du chat.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_chat_card(self):
+    &#34;&#34;&#34;Clique sur la carte du chat.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//button[@id=&#39;chat&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -93,12 +112,13 @@
 <span>def <span class="ident">click_landing_button</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le bouton de la landing.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_landing_button(self):
+    &#34;&#34;&#34;Clique sur le bouton de la landing.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//a[@class=&#39;landingLink&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -106,12 +126,13 @@
 <span>def <span class="ident">click_map_card</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur la carte de la map.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_map_card(self):
+    &#34;&#34;&#34;Clique sur la carte de la map.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//a[@id=&#39;map&#39;]&#34;).click()</code></pre>
 </details>
 </dd>

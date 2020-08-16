@@ -5,10 +5,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class HomeTest(unittest.TestCase):
-    """Home Page Test."""
+    """
+    Classe HomeTest.
+
+    Teste les différents élements de la page d'accueil.
+    """
 
     @classmethod
     def setUpClass(cls):
+        """Charge le drive Chrome."""
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -18,27 +23,21 @@ class HomeTest(unittest.TestCase):
         cls.url = "https://www.kwili.fr/"
 
     def test_chat_link(self):
-        """
-        test chat link.
-        """
+        """teste le lien du chat."""
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_chat_card()
         self.assertEqual(self.driver.current_url, self.url)
 
     def test_map_link(self):
-        """
-        test map link.
-        """
+        """test le lien de la map."""
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_map_card()
         self.assertEqual(self.driver.current_url, f"{self.url}map")
 
     def test_landing_link(self):
-        """
-        test landing link.
-        """
+        """teste le lien de la landing."""
         self.driver.get(self.url)
         home = HomePage(self.driver)
         home.click_landing_button()
@@ -46,5 +45,6 @@ class HomeTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        """Ferme le driver."""
         cls.driver.close()
         cls.driver.quit()

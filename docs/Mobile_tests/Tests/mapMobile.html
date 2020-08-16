@@ -28,13 +28,13 @@
 </summary>
 <pre><code class="python">import unittest
 from appium import webdriver
-from Mobile_tests.Screens.LoginScreen import LoginScreen
 from Mobile_tests.Screens.MapScreen import MapScreen
 
 
 class MapMobileTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        &#34;&#34;&#34;Charge le driver et l&#39;émulateur.&#34;&#34;&#34;
         desired_caps = {&#39;platformName&#39;: &#39;Android&#39;, &#39;platformVersion&#39;: &#39;10.0&#39;, &#39;automationName&#39;: &#39;uiautomator2&#39;,
                         &#39;deviceName&#39;: &#39;Android Emulator&#39;,
                         &#39;app&#39;: r&#34;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile-tests\app-release.apk&#34;}
@@ -42,17 +42,15 @@ class MapMobileTest(unittest.TestCase):
         cls.driver.implicitly_wait(5000)
 
     def test_01_map_feet(self):
-        login_screen = LoginScreen(self.driver)
-        login_screen.click_login()
+        &#34;&#34;&#34;Test itinéaraire à pied.&#34;&#34;&#34;
         map_screen = MapScreen(self.driver)
         map_screen.click_allow_geo()
         map_screen.click_rechercher()
         map_screen.has_found_itinary()
 
     def test_02_map_car(self):
+        &#34;&#34;&#34;Test itinéraire en voiture.&#34;&#34;&#34;
         self.driver.reset()
-        login_screen = LoginScreen(self.driver)
-        login_screen.click_login()
         map_screen = MapScreen(self.driver)
         map_screen.click_allow_geo()
         map_screen.click_transport()
@@ -61,9 +59,8 @@ class MapMobileTest(unittest.TestCase):
         map_screen.has_found_itinary()
 
     def test_03_map_adress_written(self):
+        &#34;&#34;&#34;Teste itinéraire avec l&#39;adresse écrite.&#34;&#34;&#34;
         self.driver.reset()
-        login_screen = LoginScreen(self.driver)
-        login_screen.click_login()
         map_screen = MapScreen(self.driver)
         map_screen.click_allow_geo()
         map_screen.click_votre_position()
@@ -72,9 +69,8 @@ class MapMobileTest(unittest.TestCase):
         map_screen.has_found_itinary()
 
     def test_04_map_display_details(self):
+        &#34;&#34;&#34;Teste l&#39;affichage des détails de la recherche.&#34;&#34;&#34;
         self.driver.reset()
-        login_screen = LoginScreen(self.driver)
-        login_screen.click_login()
         map_screen = MapScreen(self.driver)
         map_screen.click_allow_geo()
         map_screen.click_transport()
@@ -87,8 +83,8 @@ class MapMobileTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        cls.driver.quit()
-        # cls.driver.close()</code></pre>
+        &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
+        cls.driver.quit()</code></pre>
 </details>
 </section>
 <section>
@@ -140,6 +136,7 @@ not have a method with the specified name.</p></div>
 <pre><code class="python">class MapMobileTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        &#34;&#34;&#34;Charge le driver et l&#39;émulateur.&#34;&#34;&#34;
         desired_caps = {&#39;platformName&#39;: &#39;Android&#39;, &#39;platformVersion&#39;: &#39;10.0&#39;, &#39;automationName&#39;: &#39;uiautomator2&#39;,
                         &#39;deviceName&#39;: &#39;Android Emulator&#39;,
                         &#39;app&#39;: r&#34;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile-tests\app-release.apk&#34;}
@@ -147,17 +144,15 @@ not have a method with the specified name.</p></div>
         cls.driver.implicitly_wait(5000)
 
     def test_01_map_feet(self):
-        login_screen = LoginScreen(self.driver)
-        login_screen.click_login()
+        &#34;&#34;&#34;Test itinéaraire à pied.&#34;&#34;&#34;
         map_screen = MapScreen(self.driver)
         map_screen.click_allow_geo()
         map_screen.click_rechercher()
         map_screen.has_found_itinary()
 
     def test_02_map_car(self):
+        &#34;&#34;&#34;Test itinéraire en voiture.&#34;&#34;&#34;
         self.driver.reset()
-        login_screen = LoginScreen(self.driver)
-        login_screen.click_login()
         map_screen = MapScreen(self.driver)
         map_screen.click_allow_geo()
         map_screen.click_transport()
@@ -166,9 +161,8 @@ not have a method with the specified name.</p></div>
         map_screen.has_found_itinary()
 
     def test_03_map_adress_written(self):
+        &#34;&#34;&#34;Teste itinéraire avec l&#39;adresse écrite.&#34;&#34;&#34;
         self.driver.reset()
-        login_screen = LoginScreen(self.driver)
-        login_screen.click_login()
         map_screen = MapScreen(self.driver)
         map_screen.click_allow_geo()
         map_screen.click_votre_position()
@@ -177,9 +171,8 @@ not have a method with the specified name.</p></div>
         map_screen.has_found_itinary()
 
     def test_04_map_display_details(self):
+        &#34;&#34;&#34;Teste l&#39;affichage des détails de la recherche.&#34;&#34;&#34;
         self.driver.reset()
-        login_screen = LoginScreen(self.driver)
-        login_screen.click_login()
         map_screen = MapScreen(self.driver)
         map_screen.click_allow_geo()
         map_screen.click_transport()
@@ -192,6 +185,7 @@ not have a method with the specified name.</p></div>
 
     @classmethod
     def tearDownClass(cls):
+        &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
         cls.driver.quit()</code></pre>
 </details>
 <h3>Ancestors</h3>
@@ -204,13 +198,14 @@ not have a method with the specified name.</p></div>
 <span>def <span class="ident">setUpClass</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Hook method for setting up class fixture before running tests in the class.</p></div>
+<div class="desc"><p>Charge le driver et l'émulateur.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
 def setUpClass(cls):
+    &#34;&#34;&#34;Charge le driver et l&#39;émulateur.&#34;&#34;&#34;
     desired_caps = {&#39;platformName&#39;: &#39;Android&#39;, &#39;platformVersion&#39;: &#39;10.0&#39;, &#39;automationName&#39;: &#39;uiautomator2&#39;,
                     &#39;deviceName&#39;: &#39;Android Emulator&#39;,
                     &#39;app&#39;: r&#34;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile-tests\app-release.apk&#34;}
@@ -222,13 +217,14 @@ def setUpClass(cls):
 <span>def <span class="ident">tearDownClass</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Hook method for deconstructing the class fixture after running all tests in the class.</p></div>
+<div class="desc"><p>Ferme le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
 def tearDownClass(cls):
+    &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
     cls.driver.quit()</code></pre>
 </details>
 </dd>
@@ -239,14 +235,13 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_01_map_feet</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Test itinéaraire à pied.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_01_map_feet(self):
-    login_screen = LoginScreen(self.driver)
-    login_screen.click_login()
+    &#34;&#34;&#34;Test itinéaraire à pied.&#34;&#34;&#34;
     map_screen = MapScreen(self.driver)
     map_screen.click_allow_geo()
     map_screen.click_rechercher()
@@ -257,15 +252,14 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_02_map_car</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Test itinéraire en voiture.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_02_map_car(self):
+    &#34;&#34;&#34;Test itinéraire en voiture.&#34;&#34;&#34;
     self.driver.reset()
-    login_screen = LoginScreen(self.driver)
-    login_screen.click_login()
     map_screen = MapScreen(self.driver)
     map_screen.click_allow_geo()
     map_screen.click_transport()
@@ -278,15 +272,14 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_03_map_adress_written</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Teste itinéraire avec l'adresse écrite.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_03_map_adress_written(self):
+    &#34;&#34;&#34;Teste itinéraire avec l&#39;adresse écrite.&#34;&#34;&#34;
     self.driver.reset()
-    login_screen = LoginScreen(self.driver)
-    login_screen.click_login()
     map_screen = MapScreen(self.driver)
     map_screen.click_allow_geo()
     map_screen.click_votre_position()
@@ -299,15 +292,14 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_04_map_display_details</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Teste l'affichage des détails de la recherche.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_04_map_display_details(self):
+    &#34;&#34;&#34;Teste l&#39;affichage des détails de la recherche.&#34;&#34;&#34;
     self.driver.reset()
-    login_screen = LoginScreen(self.driver)
-    login_screen.click_login()
     map_screen = MapScreen(self.driver)
     map_screen.click_allow_geo()
     map_screen.click_transport()

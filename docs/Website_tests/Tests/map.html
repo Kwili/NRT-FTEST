@@ -34,8 +34,14 @@ from Website_tests.Pages.MapPage import MapPage
 
 
 class MapTest(unittest.TestCase):
+    &#34;&#34;&#34;
+    Classe MapTest.
+
+    Teste les différents élements de la page /map.
+    &#34;&#34;&#34;
     @classmethod
     def setUpClass(cls):
+        &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -46,9 +52,9 @@ class MapTest(unittest.TestCase):
 
     def test_find_itinary(self):
         &#34;&#34;&#34;
-        Test find itinary.
+        Teste l&#39;itinéraire.
 
-        Write adress and click on all tranport available.
+        Ecris l&#39;adresse et clique sur les transports dispnibles.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -69,9 +75,9 @@ class MapTest(unittest.TestCase):
 
     def test_zoom(self):
         &#34;&#34;&#34;
-        Test map zoom.
+        Teste le zoom.
 
-        Check that the user can zoom.
+        Zoom de différentes valeurs.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -104,7 +110,7 @@ class MapTest(unittest.TestCase):
         &#34;&#34;&#34;
         Test radius.
 
-        Test radius slider.
+        Test le radius slider.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -118,6 +124,7 @@ class MapTest(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
         cls.driver.close()
         cls.driver.quit()</code></pre>
 </details>
@@ -136,31 +143,8 @@ class MapTest(unittest.TestCase):
 <span>(</span><span>methodName='runTest')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>A class whose instances are single test cases.</p>
-<p>By default, the test code itself should be placed in a method named
-'runTest'.</p>
-<p>If the fixture may be used for many test cases, create as
-many test methods as are needed. When instantiating such a TestCase
-subclass, specify in the constructor arguments the name of the test method
-that the instance is to execute.</p>
-<p>Test authors should subclass TestCase for their own tests. Construction
-and deconstruction of the test's environment ('fixture') can be
-implemented by overriding the 'setUp' and 'tearDown' methods respectively.</p>
-<p>If it is necessary to override the <strong>init</strong> method, the base class
-<strong>init</strong> method must always be called. It is important that subclasses
-should not change the signature of their <strong>init</strong> method, since instances
-of the classes are instantiated automatically by parts of the framework
-in order to be run.</p>
-<p>When subclassing TestCase, you can set these attributes:
-* failureException: determines which exception will be raised when
-the instance's assertion methods fail; test methods raising this
-exception will be deemed to have 'failed' rather than 'errored'.
-* longMessage: determines whether long messages (including repr of
-objects used in assert methods) will be printed on failure in <em>addition</em>
-to any explicit message passed.
-* maxDiff: sets the maximum length of a diff in failure messages
-by assert methods using difflib. It is looked up as an instance
-attribute so can be configured by individual tests if required.</p>
+<div class="desc"><p>Classe MapTest.</p>
+<p>Teste les différents élements de la page /map.</p>
 <p>Create an instance of the class that will use the named test
 method when executed. Raises a ValueError if the instance does
 not have a method with the specified name.</p></div>
@@ -169,8 +153,14 @@ not have a method with the specified name.</p></div>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class MapTest(unittest.TestCase):
+    &#34;&#34;&#34;
+    Classe MapTest.
+
+    Teste les différents élements de la page /map.
+    &#34;&#34;&#34;
     @classmethod
     def setUpClass(cls):
+        &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
         options = webdriver.ChromeOptions()
 
         # Enable when certificate bugs
@@ -181,9 +171,9 @@ not have a method with the specified name.</p></div>
 
     def test_find_itinary(self):
         &#34;&#34;&#34;
-        Test find itinary.
+        Teste l&#39;itinéraire.
 
-        Write adress and click on all tranport available.
+        Ecris l&#39;adresse et clique sur les transports dispnibles.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -204,9 +194,9 @@ not have a method with the specified name.</p></div>
 
     def test_zoom(self):
         &#34;&#34;&#34;
-        Test map zoom.
+        Teste le zoom.
 
-        Check that the user can zoom.
+        Zoom de différentes valeurs.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -239,7 +229,7 @@ not have a method with the specified name.</p></div>
         &#34;&#34;&#34;
         Test radius.
 
-        Test radius slider.
+        Test le radius slider.
         &#34;&#34;&#34;
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
@@ -253,6 +243,7 @@ not have a method with the specified name.</p></div>
 
     @classmethod
     def tearDownClass(cls):
+        &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
         cls.driver.close()
         cls.driver.quit()</code></pre>
 </details>
@@ -266,13 +257,14 @@ not have a method with the specified name.</p></div>
 <span>def <span class="ident">setUpClass</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Hook method for setting up class fixture before running tests in the class.</p></div>
+<div class="desc"><p>Charge le drive Chrome.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
 def setUpClass(cls):
+    &#34;&#34;&#34;Charge le drive Chrome.&#34;&#34;&#34;
     options = webdriver.ChromeOptions()
 
     # Enable when certificate bugs
@@ -286,13 +278,14 @@ def setUpClass(cls):
 <span>def <span class="ident">tearDownClass</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Hook method for deconstructing the class fixture after running all tests in the class.</p></div>
+<div class="desc"><p>Ferme le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@classmethod
 def tearDownClass(cls):
+    &#34;&#34;&#34;Ferme le driver.&#34;&#34;&#34;
     cls.driver.close()
     cls.driver.quit()</code></pre>
 </details>
@@ -304,17 +297,17 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_find_itinary</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Test find itinary.</p>
-<p>Write adress and click on all tranport available.</p></div>
+<div class="desc"><p>Teste l'itinéraire.</p>
+<p>Ecris l'adresse et clique sur les transports dispnibles.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_find_itinary(self):
     &#34;&#34;&#34;
-    Test find itinary.
+    Teste l&#39;itinéraire.
 
-    Write adress and click on all tranport available.
+    Ecris l&#39;adresse et clique sur les transports dispnibles.
     &#34;&#34;&#34;
     self.driver.get(self.url)
     map_page = MapPage(self.driver)
@@ -339,7 +332,7 @@ def tearDownClass(cls):
 </code></dt>
 <dd>
 <div class="desc"><p>Test radius.</p>
-<p>Test radius slider.</p></div>
+<p>Test le radius slider.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -348,7 +341,7 @@ def tearDownClass(cls):
     &#34;&#34;&#34;
     Test radius.
 
-    Test radius slider.
+    Test le radius slider.
     &#34;&#34;&#34;
     self.driver.get(self.url)
     map_page = MapPage(self.driver)
@@ -365,17 +358,17 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_zoom</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Test map zoom.</p>
-<p>Check that the user can zoom.</p></div>
+<div class="desc"><p>Teste le zoom.</p>
+<p>Zoom de différentes valeurs.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_zoom(self):
     &#34;&#34;&#34;
-    Test map zoom.
+    Teste le zoom.
 
-    Check that the user can zoom.
+    Zoom de différentes valeurs.
     &#34;&#34;&#34;
     self.driver.get(self.url)
     map_page = MapPage(self.driver)

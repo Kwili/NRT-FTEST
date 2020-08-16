@@ -27,23 +27,33 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class LandingPage:
+    &#34;&#34;&#34;
+    Classe LandingPage.
 
+    Recherche les différents élements de la page /landing à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_navbar_app_link(self):
+        &#34;&#34;&#34;Clique sur le lien de l&#39;application mobile.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//input[@value=&#39;Application&#39;]&#34;).click()
 
     def click_home(self):
+        &#34;&#34;&#34;Clique sur le lien dirigeant vers la page d&#39;accueil.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//a[text()=&#39;KWILI&#39;]&#34;).click()
 
     def click_map(self):
+        &#34;&#34;&#34;Clique sur la lien dirigeant vers la map.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//a[@href=&#39;/map&#39;]&#34;).click()
 
     def click_chat_widget(self):
+        &#34;&#34;&#34;Clique sur le chat widget.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//button[@class=&#39;rcw-launcher&#39;]&#34;).click()
 
     def click_app_apercu_link(self):
+        &#34;&#34;&#34;Clique sur le lien de l&#39;application mobile de la section aperçu.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//div[@class=&#39;downloadButton&#39;]&#34;).click()</code></pre>
 </details>
 </section>
@@ -61,29 +71,41 @@
 <span>(</span><span>driver)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Classe LandingPage.</p>
+<p>Recherche les différents élements de la page /landing à tester.</p>
+<p>Charge le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class LandingPage:
+    &#34;&#34;&#34;
+    Classe LandingPage.
 
+    Recherche les différents élements de la page /landing à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_navbar_app_link(self):
+        &#34;&#34;&#34;Clique sur le lien de l&#39;application mobile.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//input[@value=&#39;Application&#39;]&#34;).click()
 
     def click_home(self):
+        &#34;&#34;&#34;Clique sur le lien dirigeant vers la page d&#39;accueil.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//a[text()=&#39;KWILI&#39;]&#34;).click()
 
     def click_map(self):
+        &#34;&#34;&#34;Clique sur la lien dirigeant vers la map.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//a[@href=&#39;/map&#39;]&#34;).click()
 
     def click_chat_widget(self):
+        &#34;&#34;&#34;Clique sur le chat widget.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//button[@class=&#39;rcw-launcher&#39;]&#34;).click()
 
     def click_app_apercu_link(self):
+        &#34;&#34;&#34;Clique sur le lien de l&#39;application mobile de la section aperçu.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//div[@class=&#39;downloadButton&#39;]&#34;).click()</code></pre>
 </details>
 <h3>Methods</h3>
@@ -92,12 +114,13 @@
 <span>def <span class="ident">click_app_apercu_link</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le lien de l'application mobile de la section aperçu.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_app_apercu_link(self):
+    &#34;&#34;&#34;Clique sur le lien de l&#39;application mobile de la section aperçu.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//div[@class=&#39;downloadButton&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -105,12 +128,13 @@
 <span>def <span class="ident">click_chat_widget</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le chat widget.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_chat_widget(self):
+    &#34;&#34;&#34;Clique sur le chat widget.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//button[@class=&#39;rcw-launcher&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -118,12 +142,13 @@
 <span>def <span class="ident">click_home</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le lien dirigeant vers la page d'accueil.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_home(self):
+    &#34;&#34;&#34;Clique sur le lien dirigeant vers la page d&#39;accueil.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//a[text()=&#39;KWILI&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -131,12 +156,13 @@
 <span>def <span class="ident">click_map</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur la lien dirigeant vers la map.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_map(self):
+    &#34;&#34;&#34;Clique sur la lien dirigeant vers la map.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//a[@href=&#39;/map&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -144,12 +170,13 @@
 <span>def <span class="ident">click_navbar_app_link</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le lien de l'application mobile.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_navbar_app_link(self):
+    &#34;&#34;&#34;Clique sur le lien de l&#39;application mobile.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//input[@value=&#39;Application&#39;]&#34;).click()</code></pre>
 </details>
 </dd>

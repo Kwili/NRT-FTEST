@@ -32,44 +32,64 @@ from time import sleep
 
 
 class MapPage:
+    &#34;&#34;&#34;
+    Classe MapPage.
+
+    Recherche les différents élements de la page /map à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
         self.driver.implicitly_wait(5)
 
     def write_position(self):
+        &#34;&#34;&#34;Ecris l&#39;adresse dans la barre de recherche et clique sur le bouton de recherche.&#34;&#34;&#34;
         sleep(2)
         # TODO: Remove sleep function
         self.driver.find_element_by_xpath(&#34;//input[@type=&#39;text&#39;]&#34;).send_keys(&#34;1 rue rivoli&#34;)
         self.driver.find_element_by_xpath(&#34;//span[@class=&#39;pac-matched&#39;]&#34;).click()
 
     def click_hospital(self):
+        &#34;&#34;&#34;Clique sur le 2ème hopital le plus proche.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//div[@tabindex=&#39;0&#39;]/div[3]/div/div/div[2]&#34;).click()
 
     def _click_transport(self, i):
+        &#34;&#34;&#34;Clique sur le transport numéro i.
+        :param i: int
+        &#34;&#34;&#34;
         self.driver.find_element_by_xpath(f&#34;//div[@class=&#39;travelModeButtonsWrapper&#39;]/div[{i}]&#34;).click()
 
     def click_bus(self):
+        &#34;&#34;&#34;Clique sur le transport en bus.&#34;&#34;&#34;
         self._click_transport(1)
 
     def click_walk(self):
+        &#34;&#34;&#34;Clique sur le transport à pied.&#34;&#34;&#34;
         self._click_transport(2)
 
     def click_car(self):
+        &#34;&#34;&#34;Clique sur le transport en voiture.&#34;&#34;&#34;
         self._click_transport(3)
 
     def zoom_in(self):
+        &#34;&#34;&#34;Clique sur le zoom avant.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//button[@title=&#39;Zoom avant&#39;]&#34;).click()
 
     def zoom_out(self):
+        &#34;&#34;&#34;Clique sur le zoom arrière.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//button[@title=&#39;Zoom arrière&#39;]&#34;).click()
 
     def move_slider(self, offset):
+        &#34;&#34;&#34;Déplace le slider d&#39;une valeur offset.
+        :param offset: int
+        &#34;&#34;&#34;
         slider_xpath = &#34;//span[@class=&#39;MuiSlider-thumb MuiSlider-thumbColorPrimary jss21&#39;]&#34;
         slider = self.driver.find_element_by_xpath(slider_xpath)
         move = ActionChains(self.driver)
         move.click_and_hold(slider).move_by_offset(offset, 0).release().perform()
 
     def no_ininary_founded_handler(self, xpath):
+        &#34;&#34;&#34;Fonction de gestion d&#39;erreur de l&#39;itinéraire.&#34;&#34;&#34;
         try:
             self.driver.find_element_by_xpath(xpath)
         except NoSuchElementException:
@@ -91,50 +111,72 @@ class MapPage:
 <span>(</span><span>driver)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Classe MapPage.</p>
+<p>Recherche les différents élements de la page /map à tester.</p>
+<p>Charge le driver.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class MapPage:
+    &#34;&#34;&#34;
+    Classe MapPage.
+
+    Recherche les différents élements de la page /map à tester.
+    &#34;&#34;&#34;
     def __init__(self, driver):
+        &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
         self.driver.implicitly_wait(5)
 
     def write_position(self):
+        &#34;&#34;&#34;Ecris l&#39;adresse dans la barre de recherche et clique sur le bouton de recherche.&#34;&#34;&#34;
         sleep(2)
         # TODO: Remove sleep function
         self.driver.find_element_by_xpath(&#34;//input[@type=&#39;text&#39;]&#34;).send_keys(&#34;1 rue rivoli&#34;)
         self.driver.find_element_by_xpath(&#34;//span[@class=&#39;pac-matched&#39;]&#34;).click()
 
     def click_hospital(self):
+        &#34;&#34;&#34;Clique sur le 2ème hopital le plus proche.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//div[@tabindex=&#39;0&#39;]/div[3]/div/div/div[2]&#34;).click()
 
     def _click_transport(self, i):
+        &#34;&#34;&#34;Clique sur le transport numéro i.
+        :param i: int
+        &#34;&#34;&#34;
         self.driver.find_element_by_xpath(f&#34;//div[@class=&#39;travelModeButtonsWrapper&#39;]/div[{i}]&#34;).click()
 
     def click_bus(self):
+        &#34;&#34;&#34;Clique sur le transport en bus.&#34;&#34;&#34;
         self._click_transport(1)
 
     def click_walk(self):
+        &#34;&#34;&#34;Clique sur le transport à pied.&#34;&#34;&#34;
         self._click_transport(2)
 
     def click_car(self):
+        &#34;&#34;&#34;Clique sur le transport en voiture.&#34;&#34;&#34;
         self._click_transport(3)
 
     def zoom_in(self):
+        &#34;&#34;&#34;Clique sur le zoom avant.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//button[@title=&#39;Zoom avant&#39;]&#34;).click()
 
     def zoom_out(self):
+        &#34;&#34;&#34;Clique sur le zoom arrière.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//button[@title=&#39;Zoom arrière&#39;]&#34;).click()
 
     def move_slider(self, offset):
+        &#34;&#34;&#34;Déplace le slider d&#39;une valeur offset.
+        :param offset: int
+        &#34;&#34;&#34;
         slider_xpath = &#34;//span[@class=&#39;MuiSlider-thumb MuiSlider-thumbColorPrimary jss21&#39;]&#34;
         slider = self.driver.find_element_by_xpath(slider_xpath)
         move = ActionChains(self.driver)
         move.click_and_hold(slider).move_by_offset(offset, 0).release().perform()
 
     def no_ininary_founded_handler(self, xpath):
+        &#34;&#34;&#34;Fonction de gestion d&#39;erreur de l&#39;itinéraire.&#34;&#34;&#34;
         try:
             self.driver.find_element_by_xpath(xpath)
         except NoSuchElementException:
@@ -147,12 +189,13 @@ class MapPage:
 <span>def <span class="ident">click_bus</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le transport en bus.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_bus(self):
+    &#34;&#34;&#34;Clique sur le transport en bus.&#34;&#34;&#34;
     self._click_transport(1)</code></pre>
 </details>
 </dd>
@@ -160,12 +203,13 @@ class MapPage:
 <span>def <span class="ident">click_car</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le transport en voiture.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_car(self):
+    &#34;&#34;&#34;Clique sur le transport en voiture.&#34;&#34;&#34;
     self._click_transport(3)</code></pre>
 </details>
 </dd>
@@ -173,12 +217,13 @@ class MapPage:
 <span>def <span class="ident">click_hospital</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le 2ème hopital le plus proche.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_hospital(self):
+    &#34;&#34;&#34;Clique sur le 2ème hopital le plus proche.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//div[@tabindex=&#39;0&#39;]/div[3]/div/div/div[2]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -186,12 +231,13 @@ class MapPage:
 <span>def <span class="ident">click_walk</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le transport à pied.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_walk(self):
+    &#34;&#34;&#34;Clique sur le transport à pied.&#34;&#34;&#34;
     self._click_transport(2)</code></pre>
 </details>
 </dd>
@@ -199,12 +245,16 @@ class MapPage:
 <span>def <span class="ident">move_slider</span></span>(<span>self, offset)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Déplace le slider d'une valeur offset.
+:param offset: int</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def move_slider(self, offset):
+    &#34;&#34;&#34;Déplace le slider d&#39;une valeur offset.
+    :param offset: int
+    &#34;&#34;&#34;
     slider_xpath = &#34;//span[@class=&#39;MuiSlider-thumb MuiSlider-thumbColorPrimary jss21&#39;]&#34;
     slider = self.driver.find_element_by_xpath(slider_xpath)
     move = ActionChains(self.driver)
@@ -215,12 +265,13 @@ class MapPage:
 <span>def <span class="ident">no_ininary_founded_handler</span></span>(<span>self, xpath)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Fonction de gestion d'erreur de l'itinéraire.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def no_ininary_founded_handler(self, xpath):
+    &#34;&#34;&#34;Fonction de gestion d&#39;erreur de l&#39;itinéraire.&#34;&#34;&#34;
     try:
         self.driver.find_element_by_xpath(xpath)
     except NoSuchElementException:
@@ -232,12 +283,13 @@ class MapPage:
 <span>def <span class="ident">write_position</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Ecris l'adresse dans la barre de recherche et clique sur le bouton de recherche.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def write_position(self):
+    &#34;&#34;&#34;Ecris l&#39;adresse dans la barre de recherche et clique sur le bouton de recherche.&#34;&#34;&#34;
     sleep(2)
     # TODO: Remove sleep function
     self.driver.find_element_by_xpath(&#34;//input[@type=&#39;text&#39;]&#34;).send_keys(&#34;1 rue rivoli&#34;)
@@ -248,12 +300,13 @@ class MapPage:
 <span>def <span class="ident">zoom_in</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le zoom avant.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def zoom_in(self):
+    &#34;&#34;&#34;Clique sur le zoom avant.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//button[@title=&#39;Zoom avant&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -261,12 +314,13 @@ class MapPage:
 <span>def <span class="ident">zoom_out</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Clique sur le zoom arrière.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def zoom_out(self):
+    &#34;&#34;&#34;Clique sur le zoom arrière.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//button[@title=&#39;Zoom arrière&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
