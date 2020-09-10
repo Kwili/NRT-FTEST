@@ -1,5 +1,8 @@
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as ec
 from time import sleep
 
 
@@ -14,22 +17,27 @@ class MapPage:
         self.driver = driver
         self.driver.implicitly_wait(5)
 
-    def write_position(self):
+    def write_position(self, address):
         """Ecris l'adresse dans la barre de recherche et clique sur le bouton de recherche."""
         sleep(2)
         # TODO: Remove sleep function
-        self.driver.find_element_by_xpath("//input[@type='text']").send_keys("1 rue rivoli")
+        self.driver.find_element_by_xpath("//input[@type='text']").send_keys(address)
         self.driver.find_element_by_xpath("//span[@class='pac-matched']").click()
 
-    def click_hospital(self):
-        """Clique sur le 2ème hopital le plus proche."""
-        self.driver.find_element_by_xpath("//div[@tabindex='0']/div[3]/div/div/div[2]").click()
+    def is_hospital_displayed(self):
+        """Clique sur le 2ème hopital dans l'arbre html."""
+        try:
+            self.driver.find_element_by_xpath("//div[@tabindex='0']/div[3]/div/div[3]/div[2]")
+        except NoSuchElementException:
+            return False
+        return True
 
     def _click_transport(self, i):
         """Clique sur le transport numéro i.
         :param i: int
         """
-        self.driver.find_element_by_xpath(f"//div[@class='travelModeButtonsWrapper']/div[{i}]").click()
+        WebDriverWait(self.driver, 5).until(
+            ec.element_to_be_clickable((By.XPATH, f"//div[@class='travelModeButtonsWrapper']/div[{i}]"))).click()
 
     def click_bus(self):
         """Clique sur le transport en bus."""
