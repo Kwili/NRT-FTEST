@@ -31,18 +31,10 @@ class MapTest(unittest.TestCase):
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
 
-        map_page.write_position()
-        sleep(2)
-        # TODO: Remove sleep function
-        map_page.click_hospital()
-        sleep(1)
-        # TODO: Remove sleep function
+        map_page.write_position("1 rue rivoli")
+        self.assertTrue(map_page.is_hospital_displayed())
         map_page.click_bus()
-        sleep(2)
-        # TODO: Remove sleep function
         map_page.click_car()
-        sleep(2)
-        # TODO: Remove sleep function
         map_page.click_walk()
 
     def test_zoom(self):
@@ -54,7 +46,7 @@ class MapTest(unittest.TestCase):
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
 
-        map_page.write_position()
+        map_page.write_position("1 rue rivoli")
         map_page.zoom_in()
         sleep(0.4)
         # TODO: Remove sleep function
@@ -87,7 +79,7 @@ class MapTest(unittest.TestCase):
         self.driver.get(self.url)
         map_page = MapPage(self.driver)
 
-        map_page.write_position()
+        map_page.write_position("1 rue rivoli")
         map_page.move_slider(150)
         map_page.move_slider(150)
         map_page.move_slider(150)
