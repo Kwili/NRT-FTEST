@@ -3,6 +3,7 @@ import HtmlTestRunner
 from Website_tests.Tests.landing import LandingTest
 from Website_tests.Tests.home import HomeTest
 from Website_tests.Tests.map import MapTest
+from Website_tests.Tests.chat import ChatTest
 
 
 def run():
@@ -11,7 +12,7 @@ def run():
 
     Lance les classes de tests spécifiées.
     """
-    test_classes_to_run = [HomeTest, LandingTest, MapTest]
+    test_classes_to_run = [HomeTest, LandingTest, MapTest, ChatTest]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:

@@ -71,7 +71,6 @@ class LandingTest(unittest.TestCase):
         self.driver.get(self.url)
         landing = LandingPage(self.driver)
 
-        # Check chat widget
         landing.click_chat_widget()
 
     @classmethod
