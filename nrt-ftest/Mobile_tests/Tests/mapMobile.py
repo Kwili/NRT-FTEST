@@ -1,5 +1,6 @@
 import unittest
 from appium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
 from Mobile_tests.Screens.MapScreen import MapScreen
 
 
@@ -7,9 +8,10 @@ class MapMobileTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Charge le driver et l'émulateur."""
-        desired_caps = {'platformName': 'Android', 'platformVersion': '10.0', 'automationName': 'uiautomator2',
+        desired_caps = {'platformName': 'Android', 'platformVersion': '11.0', 'automationName': 'uiautomator2',
                         'deviceName': 'Android Emulator',
-                        'app': r"C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile-tests\app-release.apk"}
+                        'app': r'C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk'}
+
         cls.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         cls.driver.implicitly_wait(5000)
 

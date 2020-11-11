@@ -2,6 +2,7 @@ import unittest
 import HtmlTestRunner
 from Mobile_tests.Tests.mapMobile import MapMobileTest
 from Mobile_tests.Tests.botMobile import BotMobileTest
+from Mobile_tests.Tests.settingsMobile import SettingsMobileTest
 
 
 def run():
@@ -10,7 +11,7 @@ def run():
 
     Lance les classes de tests spécifiées.
     """
-    test_classes_to_run = [MapMobileTest, BotMobileTest]
+    test_classes_to_run = [SettingsMobileTest]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:
