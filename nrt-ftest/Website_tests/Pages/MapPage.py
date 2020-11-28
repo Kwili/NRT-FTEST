@@ -26,7 +26,7 @@ class MapPage:
             ec.element_to_be_clickable((By.XPATH, "//span[@class='pac-matched']"))).click()
 
     def is_hospital_displayed(self):
-        """Clique sur le 2ème hopital dans l'arbre html."""
+        """Clique sur le 2ème hopital dans l'arbre docs."""
         try:
             self.driver.find_element_by_xpath('//*[@id="root"]/div/div/div[1]/div/div[1]/div[3]/div/div[3]/div[6]')
 

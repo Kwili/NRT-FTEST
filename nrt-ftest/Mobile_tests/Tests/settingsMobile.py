@@ -1,6 +1,5 @@
 import unittest
 from appium import webdriver
-
 from Mobile_tests.Screens.TutoScreen import TutoScreen
 from Mobile_tests.Screens.SettingsScreen import SettingsScreen
 
@@ -9,7 +8,7 @@ class SettingsMobileTest(unittest.TestCase):
     """
     Classe BotMobileTest.
 
-    Teste les différents élements de l'écran du chat.
+    Teste les différents élements de l'écran settings.
     """
 
     @classmethod
@@ -22,7 +21,7 @@ class SettingsMobileTest(unittest.TestCase):
         cls.driver.implicitly_wait(5000)
 
     def test_settings(self):
-        """Teste l'envoie de messages vers le chat bot."""
+        """Teste les boutons de l'écrans settings."""
         tuto_screen = TutoScreen(self.driver)
         tuto_screen.button_click("SUIVANT")
         tuto_screen.button_click("SUIVANT")
