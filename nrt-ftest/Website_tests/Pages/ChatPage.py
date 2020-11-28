@@ -22,6 +22,10 @@ class ChatPage:
             ec.element_to_be_clickable((By.XPATH, "//h4[@class='rcw-title']")))
 
     def write_msg(self, msg):
+        """
+        Ecris un message et l'envoie.
+        :param msg: message à écrire
+        """
         self.driver.find_element_by_xpath("//form[@class='rcw-sender']/input").send_keys(msg)
         self.driver.find_element_by_xpath("//button[@class='rcw-send']").click()
         WebDriverWait(self.driver, 2).until(

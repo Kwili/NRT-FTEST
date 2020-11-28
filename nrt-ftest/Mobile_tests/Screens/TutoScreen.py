@@ -10,8 +10,8 @@ class TutoScreen:
 
     def button_click(self, text):
         """
-        Ecris et envoie du texte sur le chat bot.
-        :param text: (str) Texte à envoyer
+        Clique sur le bouton.
+        :param text: (str) Nom du bouton.
         """
         self.driver.find_element_by_xpath(f"//android.widget.TextView[@text='{text}']").click()
 
