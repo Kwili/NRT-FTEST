@@ -65,7 +65,7 @@ class MapPage:
         """Déplace le slider d'une valeur offset.
         :param offset: int
         """
-        slider_xpath = "//span[@class='MuiSlider-thumb MuiSlider-thumbColorPrimary jss92']"
+        slider_xpath = "//span[starts-with(@class, 'MuiSlider-thumb MuiSlider-thumbColorPrimary')]"
         slider = self.driver.find_element_by_xpath(slider_xpath)
         move = ActionChains(self.driver)
         move.click_and_hold(slider).move_by_offset(offset, 0).release().perform()

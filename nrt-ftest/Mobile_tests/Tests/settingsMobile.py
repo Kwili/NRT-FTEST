@@ -29,7 +29,8 @@ class SettingsMobileTest(unittest.TestCase):
         tuto_screen.button_click("QUITTER LE TUTORIEL")
         settings_screen = SettingsScreen(self.driver)
         settings_screen.click_settings_tab()
-        settings_screen.click_cursor("OFF")
+        settings_screen.click_language("Français")
+
 
     @classmethod
     def tearDownClass(cls):

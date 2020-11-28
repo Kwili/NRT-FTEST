@@ -10,7 +10,7 @@ class HomePage:
 
     def click_chat_card(self):
         """Clique sur la carte du chat."""
-        self.driver.find_element_by_xpath("//button[@id='chat']").click()
+        self.driver.find_element_by_xpath("//button[@class='rcw-launcher']").click()
 
     def click_map_card(self):
         """Clique sur la carte de la map."""

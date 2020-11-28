@@ -20,22 +20,23 @@ class MapTest(unittest.TestCase):
         # options.add_argument('--ignore-certificate-errors')
 
         cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
+        cls.driver.implicitly_wait(5)
         cls.url = "https://www.kwili.fr/map"
 
-    # def test_find_itinary(self):
-    #     """
-    #     Teste l'itinéraire.
-    #
-    #     Ecris l'adresse et clique sur les transports dispnibles.
-    #     """
-    #     self.driver.get(self.url)
-    #     map_page = MapPage(self.driver)
-    #
-    #     map_page.write_position("1 rue rivoli")
-    #     self.assertTrue(map_page.is_hospital_displayed())
-    #     map_page.click_bus()
-    #     map_page.click_car()
-    #     map_page.click_walk()
+    def test_find_itinary(self):
+        """
+        Teste l'itinéraire.
+
+        Ecris l'adresse et clique sur les transports dispnibles.
+        """
+        self.driver.get(self.url)
+        map_page = MapPage(self.driver)
+
+        map_page.write_position("1 rue rivoli")
+        if self.assertTrue(map_page.is_hospital_displayed()):
+            map_page.click_bus()
+            map_page.click_car()
+            map_page.click_walk()
 
     def test_zoom(self):
         """
@@ -70,21 +71,19 @@ class MapTest(unittest.TestCase):
         # TODO: Remove sleep function
         map_page.zoom_out()
 
-    # def test_radius(self):
-    #     """
-    #     Test radius.
-    #
-    #     Test le radius slider.
-    #     """
-    #     self.driver.get(self.url)
-    #     map_page = MapPage(self.driver)
-    #
-    #     map_page.write_position("1 rue rivoli")
-    #     map_page.move_slider(150)
-    #     map_page.move_slider(150)
-    #     map_page.move_slider(150)
-    #     map_page.move_slider(-150)
-    #     map_page.move_slider(150)
+    def test_radius(self):
+        """
+        Test radius.
+
+        Test le radius slider.
+        """
+        self.driver.get(self.url)
+        map_page = MapPage(self.driver)
+
+        map_page.write_position("1 rue rivoli")
+        map_page.move_slider(150)
+        map_page.move_slider(150)
+        map_page.move_slider(150)
 
     @classmethod
     def tearDownClass(cls):

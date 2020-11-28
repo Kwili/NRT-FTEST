@@ -19,6 +19,7 @@ class LandingTest(unittest.TestCase):
         # options.add_argument('--ignore-certificate-errors')
 
         cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
+        cls.driver.implicitly_wait(5)
         cls.url = "https://www.kwili.fr/landing"
 
     def test_check_navbar(self):
