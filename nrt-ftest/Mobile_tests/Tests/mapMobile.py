@@ -1,10 +1,14 @@
 import unittest
 from appium import webdriver
-from selenium.webdriver.support.wait import WebDriverWait
 from Mobile_tests.Screens.MapScreen import MapScreen
 
 
 class MapMobileTest(unittest.TestCase):
+    """
+    Classe MapMobileTest.
+
+    Teste les différents élements de l'écran du chat.
+    """
     @classmethod
     def setUpClass(cls):
         """Charge le driver et l'émulateur."""

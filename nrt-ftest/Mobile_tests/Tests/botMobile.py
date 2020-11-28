@@ -1,6 +1,5 @@
 import unittest
 from appium import webdriver
-
 from Mobile_tests.Screens.BotScreen import BotScreen
 from Mobile_tests.Screens.TutoScreen import TutoScreen
 
@@ -20,7 +19,7 @@ class BotMobileTest(unittest.TestCase):
         cls.driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
         cls.driver.implicitly_wait(5000)
 
-    def test_settings(self):
+    def test_msg(self):
         """Teste l'envoie de messages vers le chat bot."""
         tuto_screen = TutoScreen(self.driver)
         tuto_screen.button_click("SUIVANT")
