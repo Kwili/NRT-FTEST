@@ -20,6 +20,7 @@ class MapTest(unittest.TestCase):
         # options.add_argument('--ignore-certificate-errors')
 
         cls.driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), chrome_options=options)
+        cls.driver.implicitly_wait(5)
         cls.url = "https://www.kwili.fr/map"
 
     def test_find_itinary(self):
@@ -32,10 +33,10 @@ class MapTest(unittest.TestCase):
         map_page = MapPage(self.driver)
 
         map_page.write_position("1 rue rivoli")
-        self.assertTrue(map_page.is_hospital_displayed())
-        map_page.click_bus()
-        map_page.click_car()
-        map_page.click_walk()
+        if self.assertTrue(map_page.is_hospital_displayed()):
+            map_page.click_bus()
+            map_page.click_car()
+            map_page.click_walk()
 
     def test_zoom(self):
         """
@@ -82,8 +83,6 @@ class MapTest(unittest.TestCase):
         map_page.write_position("1 rue rivoli")
         map_page.move_slider(150)
         map_page.move_slider(150)
-        map_page.move_slider(150)
-        map_page.move_slider(-150)
         map_page.move_slider(150)
 
     @classmethod

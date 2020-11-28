@@ -10,7 +10,7 @@ class LandingPage:
 
     def click_navbar_app_link(self):
         """Clique sur le lien de l'application mobile."""
-        self.driver.find_element_by_xpath("//input[@value='Application']").click()
+        self.driver.find_element_by_xpath("//button[text()='Application']").click()
 
     def click_home(self):
         """Clique sur le lien dirigeant vers la page d'accueil."""
