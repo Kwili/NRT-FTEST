@@ -20,6 +20,13 @@ class BotScreen:
         self.driver.find_element_by_class_name("android.widget.EditText").send_keys(text)
         self.driver.find_element_by_xpath("//android.widget.TextView[@text='Send']").click()
 
+    def click_quick_chat(self, index):
+        """
+        Clique sur le quick chat choisi en index.
+        :param index: l'index du quick chat
+        """
+        self.driver.find_element_by_xpath(f"(//android.view.ViewGroup)[{index}]").click()
+
 
 
 
