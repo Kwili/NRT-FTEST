@@ -1,4 +1,6 @@
 import unittest
+from time import sleep
+
 from appium import webdriver
 from Mobile_tests.Screens.BotScreen import BotScreen
 from Mobile_tests.Screens.TutoScreen import TutoScreen
@@ -27,9 +29,29 @@ class BotMobileTest(unittest.TestCase):
         tuto_screen.button_click("QUITTER LE TUTORIEL")
 
         bot_screen = BotScreen(self.driver)
-        bot_screen.send_text("Bonjour j'ai besoin d'assistance")
-        bot_screen.send_text("Je crois que je me suis cassé un orteil")
-        bot_screen.send_text("Allo ?")
+        bot_screen.send_text("J'ai mal")
+        sleep(0.5)
+        bot_screen.send_text("au pied")
+        sleep(0.5)
+        bot_screen.send_text("3")
+        sleep(0.5)
+        bot_screen.send_text("2 jours")
+        sleep(0.5)
+        bot_screen.send_text("oui")
+        sleep(0.5)
+        bot_screen.send_text("oui")
+        sleep(0.5)
+        bot_screen.send_text("184 cm")
+        sleep(0.5)
+        bot_screen.send_text("66 kg")
+        sleep(0.5)
+        bot_screen.send_text("non")
+        sleep(0.5)
+        bot_screen.send_text("Poils de chats")
+        sleep(0.5)
+        bot_screen.send_text("0")
+        sleep(0.5)
+        bot_screen.send_text("oui")
 
     @classmethod
     def tearDownClass(cls):

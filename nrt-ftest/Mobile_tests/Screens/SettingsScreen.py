@@ -10,7 +10,7 @@ class SettingsScreen:
 
     def click_settings_tab(self):
         """Clique sur le bouton settings"""
-        self.driver.find_element_by_xpath("//android.widget.Button[contains(@content-desc,'Settings')]").click()
+        self.driver.find_element_by_xpath("//android.widget.Button[contains(@content-desc,'Settings')] | //android.widget.Button[contains(@content-desc,'Réglages')]").click()
 
     def click_cursor(self, text):
         """Cliquer sur le curseur choisi"""
@@ -20,6 +20,12 @@ class SettingsScreen:
         """Clique sur le bouton langue"""
         self.driver.find_element_by_xpath("//android.widget.Spinner").click()
         self.driver.find_element_by_xpath(f"//android.widget.CheckedTextView[@text='{language}']").click()
+
+    def switch_mode(self):
+        """Clique sur le bouton langue"""
+        self.driver.find_element_by_xpath("//android.widget.Switch").click()
+
+
 
 
 

@@ -1,4 +1,6 @@
 import unittest
+from time import sleep
+
 from appium import webdriver
 from Mobile_tests.Screens.TutoScreen import TutoScreen
 from Mobile_tests.Screens.SettingsScreen import SettingsScreen
@@ -28,14 +30,45 @@ class SettingsMobileTest(unittest.TestCase):
         cls.driver.implicitly_wait(5000)
 
     def test_settings(self):
-        """Teste les boutons de l'écrans settings."""
+        """Teste les boutons de l'écran settings."""
         tuto_screen = TutoScreen(self.driver)
         tuto_screen.button_click("SUIVANT")
         tuto_screen.button_click("SUIVANT")
         tuto_screen.button_click("QUITTER LE TUTORIEL")
+
         settings_screen = SettingsScreen(self.driver)
         settings_screen.click_settings_tab()
+        settings_screen.click_language("English")
+
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("QUITTER LE TUTORIEL")
+
+        settings_screen.click_settings_tab()
         settings_screen.click_language("Français")
+
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("QUITTER LE TUTORIEL")
+        settings_screen.click_settings_tab()
+
+        settings_screen.switch_mode()
+
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("QUITTER LE TUTORIEL")
+
+        settings_screen.switch_mode()
+
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("QUITTER LE TUTORIEL")
+
+        settings_screen.switch_mode()
+
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("SUIVANT")
+        tuto_screen.button_click("QUITTER LE TUTORIEL")
 
     @classmethod
     def tearDownClass(cls):
