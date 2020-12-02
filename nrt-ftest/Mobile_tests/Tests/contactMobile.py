@@ -8,9 +8,9 @@ from Mobile_tests.Screens.ContactScreen import ContactScreen
 
 class ContactMobileTest(unittest.TestCase):
     """
-    Classe BotMobileTest.
+    Classe ContactMobileTest.
 
-    Teste les différents élements de l'écran settings.
+    Teste les différents élements de l'écran contact.
     """
 
     @classmethod
@@ -23,15 +23,23 @@ class ContactMobileTest(unittest.TestCase):
         cls.driver.implicitly_wait(5000)
 
     def test_contact_send(self):
-        """Teste les boutons de l'écran settings."""
+        """Teste l'envoie dans l'onglet contact"""
         tuto_screen = TutoScreen(self.driver)
         tuto_screen.button_click("SUIVANT")
         tuto_screen.button_click("SUIVANT")
         tuto_screen.button_click("QUITTER LE TUTORIEL")
         contact = ContactScreen(self.driver)
         contact.click_contact_tab()
+        sleep(1)
+        contact.click_submit()
+        contact.click_confirm()
         contact.write_name("Kentin")
-        sleep(3)
+        contact.write_phone("0603562134")
+        contact.write_email("thepratol@gmail.com")
+        contact.write_message("Super votre app !")
+        contact.click_submit()
+        contact.click_confirm()
+
 
     @classmethod
     def tearDownClass(cls):

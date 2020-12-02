@@ -5,12 +5,10 @@ from appium import webdriver
 from Mobile_tests.Screens.TutoScreen import TutoScreen
 from Mobile_tests.Screens.SettingsScreen import SettingsScreen
 
-from uiautomator import Device
-
 
 class SettingsMobileTest(unittest.TestCase):
     """
-    Classe BotMobileTest.
+    Classe SettingsMobileTest.
 
     Teste les différents élements de l'écran settings.
     """
@@ -33,7 +31,9 @@ class SettingsMobileTest(unittest.TestCase):
         """Teste les boutons de l'écran settings."""
         tuto_screen = TutoScreen(self.driver)
         tuto_screen.button_click("SUIVANT")
+        sleep(0.5)
         tuto_screen.button_click("SUIVANT")
+        sleep(0.5)
         tuto_screen.button_click("QUITTER LE TUTORIEL")
 
         settings_screen = SettingsScreen(self.driver)
@@ -41,34 +41,30 @@ class SettingsMobileTest(unittest.TestCase):
         settings_screen.click_language("English")
 
         tuto_screen.button_click("SUIVANT")
+        sleep(0.5)
         tuto_screen.button_click("SUIVANT")
+        sleep(0.5)
         tuto_screen.button_click("QUITTER LE TUTORIEL")
 
         settings_screen.click_settings_tab()
         settings_screen.click_language("Français")
 
         tuto_screen.button_click("SUIVANT")
+        sleep(0.5)
         tuto_screen.button_click("SUIVANT")
+        sleep(0.5)
         tuto_screen.button_click("QUITTER LE TUTORIEL")
         settings_screen.click_settings_tab()
 
         settings_screen.switch_mode()
 
         tuto_screen.button_click("SUIVANT")
+        sleep(0.5)
         tuto_screen.button_click("SUIVANT")
+        sleep(0.5)
         tuto_screen.button_click("QUITTER LE TUTORIEL")
 
-        settings_screen.switch_mode()
-
-        tuto_screen.button_click("SUIVANT")
-        tuto_screen.button_click("SUIVANT")
-        tuto_screen.button_click("QUITTER LE TUTORIEL")
-
-        settings_screen.switch_mode()
-
-        tuto_screen.button_click("SUIVANT")
-        tuto_screen.button_click("SUIVANT")
-        tuto_screen.button_click("QUITTER LE TUTORIEL")
+        sleep(1)
 
     @classmethod
     def tearDownClass(cls):

@@ -12,7 +12,7 @@ def run():
 
     Lance les classes de tests spécifiées.
     """
-    test_classes_to_run = [ContactMobileTest]
+    test_classes_to_run = [BotMobileTest, SettingsMobileTest, ContactMobileTest]
     loader = unittest.TestLoader()
     suites_list = []
     for test_class in test_classes_to_run:

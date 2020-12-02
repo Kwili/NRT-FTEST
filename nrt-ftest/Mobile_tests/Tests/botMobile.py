@@ -12,6 +12,7 @@ class BotMobileTest(unittest.TestCase):
 
     Teste les différents élements de l'écran du chat.
     """
+
     @classmethod
     def setUpClass(cls):
         """Charge le driver et l'émulateur."""
