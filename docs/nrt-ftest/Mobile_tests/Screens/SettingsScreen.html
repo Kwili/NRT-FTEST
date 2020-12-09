@@ -30,24 +30,28 @@
     &#34;&#34;&#34;
     Classe SettingsScreen.
 
-    Recherche les différents élements de l&#39;écran du chat bot à tester.
+    Recherche les différents élements de l&#39;écran réglages à tester.
     &#34;&#34;&#34;
     def __init__(self, driver):
         &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_settings_tab(self):
-        &#34;&#34;&#34;Clique sur le bouton settings&#34;&#34;&#34;
-        self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Settings&#39;)]&#34;).click()
+        &#34;&#34;&#34;Clique sur le bouton settings.&#34;&#34;&#34;
+        self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Settings&#39;)] | //android.widget.Button[contains(@content-desc,&#39;Réglages&#39;)]&#34;).click()
 
     def click_cursor(self, text):
-        &#34;&#34;&#34;Cliquer sur le curseur choisi&#34;&#34;&#34;
+        &#34;&#34;&#34;Cliquer sur le curseur choisi.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(f&#34;//android.widget.Switch[@text=&#39;{text}&#39;]&#34;).click()
 
     def click_language(self, language):
-        &#34;&#34;&#34;Clique sur le bouton langue&#34;&#34;&#34;
+        &#34;&#34;&#34;Clique sur le bouton langue.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.Spinner&#34;).click()
-        self.driver.find_element_by_xpath(f&#34;//android.widget.CheckedTextView[@text=&#39;{language}&#39;]&#34;).click()</code></pre>
+        self.driver.find_element_by_xpath(f&#34;//android.widget.CheckedTextView[@text=&#39;{language}&#39;]&#34;).click()
+
+    def switch_mode(self):
+        &#34;&#34;&#34;Clique sur le switch du mode (light ou dark).&#34;&#34;&#34;
+        self.driver.find_element_by_xpath(&#34;//android.widget.Switch&#34;).click()</code></pre>
 </details>
 </section>
 <section>
@@ -65,7 +69,7 @@
 </code></dt>
 <dd>
 <div class="desc"><p>Classe SettingsScreen.</p>
-<p>Recherche les différents élements de l'écran du chat bot à tester.</p>
+<p>Recherche les différents élements de l'écran réglages à tester.</p>
 <p>Charge le driver.</p></div>
 <details class="source">
 <summary>
@@ -75,24 +79,28 @@
     &#34;&#34;&#34;
     Classe SettingsScreen.
 
-    Recherche les différents élements de l&#39;écran du chat bot à tester.
+    Recherche les différents élements de l&#39;écran réglages à tester.
     &#34;&#34;&#34;
     def __init__(self, driver):
         &#34;&#34;&#34;Charge le driver.&#34;&#34;&#34;
         self.driver = driver
 
     def click_settings_tab(self):
-        &#34;&#34;&#34;Clique sur le bouton settings&#34;&#34;&#34;
-        self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Settings&#39;)]&#34;).click()
+        &#34;&#34;&#34;Clique sur le bouton settings.&#34;&#34;&#34;
+        self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Settings&#39;)] | //android.widget.Button[contains(@content-desc,&#39;Réglages&#39;)]&#34;).click()
 
     def click_cursor(self, text):
-        &#34;&#34;&#34;Cliquer sur le curseur choisi&#34;&#34;&#34;
+        &#34;&#34;&#34;Cliquer sur le curseur choisi.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(f&#34;//android.widget.Switch[@text=&#39;{text}&#39;]&#34;).click()
 
     def click_language(self, language):
-        &#34;&#34;&#34;Clique sur le bouton langue&#34;&#34;&#34;
+        &#34;&#34;&#34;Clique sur le bouton langue.&#34;&#34;&#34;
         self.driver.find_element_by_xpath(&#34;//android.widget.Spinner&#34;).click()
-        self.driver.find_element_by_xpath(f&#34;//android.widget.CheckedTextView[@text=&#39;{language}&#39;]&#34;).click()</code></pre>
+        self.driver.find_element_by_xpath(f&#34;//android.widget.CheckedTextView[@text=&#39;{language}&#39;]&#34;).click()
+
+    def switch_mode(self):
+        &#34;&#34;&#34;Clique sur le switch du mode (light ou dark).&#34;&#34;&#34;
+        self.driver.find_element_by_xpath(&#34;//android.widget.Switch&#34;).click()</code></pre>
 </details>
 <h3>Methods</h3>
 <dl>
@@ -100,13 +108,13 @@
 <span>def <span class="ident">click_cursor</span></span>(<span>self, text)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Cliquer sur le curseur choisi</p></div>
+<div class="desc"><p>Cliquer sur le curseur choisi.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_cursor(self, text):
-    &#34;&#34;&#34;Cliquer sur le curseur choisi&#34;&#34;&#34;
+    &#34;&#34;&#34;Cliquer sur le curseur choisi.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(f&#34;//android.widget.Switch[@text=&#39;{text}&#39;]&#34;).click()</code></pre>
 </details>
 </dd>
@@ -114,13 +122,13 @@
 <span>def <span class="ident">click_language</span></span>(<span>self, language)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Clique sur le bouton langue</p></div>
+<div class="desc"><p>Clique sur le bouton langue.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_language(self, language):
-    &#34;&#34;&#34;Clique sur le bouton langue&#34;&#34;&#34;
+    &#34;&#34;&#34;Clique sur le bouton langue.&#34;&#34;&#34;
     self.driver.find_element_by_xpath(&#34;//android.widget.Spinner&#34;).click()
     self.driver.find_element_by_xpath(f&#34;//android.widget.CheckedTextView[@text=&#39;{language}&#39;]&#34;).click()</code></pre>
 </details>
@@ -129,14 +137,28 @@
 <span>def <span class="ident">click_settings_tab</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Clique sur le bouton settings</p></div>
+<div class="desc"><p>Clique sur le bouton settings.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def click_settings_tab(self):
-    &#34;&#34;&#34;Clique sur le bouton settings&#34;&#34;&#34;
-    self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Settings&#39;)]&#34;).click()</code></pre>
+    &#34;&#34;&#34;Clique sur le bouton settings.&#34;&#34;&#34;
+    self.driver.find_element_by_xpath(&#34;//android.widget.Button[contains(@content-desc,&#39;Settings&#39;)] | //android.widget.Button[contains(@content-desc,&#39;Réglages&#39;)]&#34;).click()</code></pre>
+</details>
+</dd>
+<dt id="nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.switch_mode"><code class="name flex">
+<span>def <span class="ident">switch_mode</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Clique sur le switch du mode (light ou dark).</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def switch_mode(self):
+    &#34;&#34;&#34;Clique sur le switch du mode (light ou dark).&#34;&#34;&#34;
+    self.driver.find_element_by_xpath(&#34;//android.widget.Switch&#34;).click()</code></pre>
 </details>
 </dd>
 </dl>
@@ -163,6 +185,7 @@
 <li><code><a title="nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.click_cursor" href="#nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.click_cursor">click_cursor</a></code></li>
 <li><code><a title="nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.click_language" href="#nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.click_language">click_language</a></code></li>
 <li><code><a title="nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.click_settings_tab" href="#nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.click_settings_tab">click_settings_tab</a></code></li>
+<li><code><a title="nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.switch_mode" href="#nrt-ftest.Mobile_tests.Screens.SettingsScreen.SettingsScreen.switch_mode">switch_mode</a></code></li>
 </ul>
 </li>
 </ul>

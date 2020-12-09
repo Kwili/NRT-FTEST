@@ -16,11 +16,6 @@ class SettingsMobileTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """Charge le driver et l'émulateur."""
-        # desired_caps = {'platformName': 'Android', 'platformVersion': '8.0',
-        #                 'deviceName': 'ce10160a32d9180f05', 'adbExecTimeout': '50000', "appWaitActivity": "*",
-        #                 "appWaitPackage": "fr.kwili.kwili",
-        #                 'app': r"C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk"}
-
         desired_caps = {'platformName': 'Android', 'platformVersion': '11.0', 'automationName': 'uiautomator2',
                         'deviceName': 'Android Emulator',
                         'app': r'C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk'}

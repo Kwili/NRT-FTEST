@@ -27,6 +27,8 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">import unittest
+from time import sleep
+
 from appium import webdriver
 from Mobile_tests.Screens.BotScreen import BotScreen
 from Mobile_tests.Screens.TutoScreen import TutoScreen
@@ -38,6 +40,7 @@ class BotMobileTest(unittest.TestCase):
 
     Teste les différents élements de l&#39;écran du chat.
     &#34;&#34;&#34;
+
     @classmethod
     def setUpClass(cls):
         &#34;&#34;&#34;Charge le driver et l&#39;émulateur.&#34;&#34;&#34;
@@ -55,9 +58,29 @@ class BotMobileTest(unittest.TestCase):
         tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
 
         bot_screen = BotScreen(self.driver)
-        bot_screen.send_text(&#34;Bonjour j&#39;ai besoin d&#39;assistance&#34;)
-        bot_screen.send_text(&#34;Je crois que je me suis cassé un orteil&#34;)
-        bot_screen.send_text(&#34;Allo ?&#34;)
+        bot_screen.send_text(&#34;J&#39;ai mal&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;au pied&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;3&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;2 jours&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;oui&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;oui&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;184 cm&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;66 kg&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;non&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;Poils de chats&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;0&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;oui&#34;)
 
     @classmethod
     def tearDownClass(cls):
@@ -94,6 +117,7 @@ not have a method with the specified name.</p></div>
 
     Teste les différents élements de l&#39;écran du chat.
     &#34;&#34;&#34;
+
     @classmethod
     def setUpClass(cls):
         &#34;&#34;&#34;Charge le driver et l&#39;émulateur.&#34;&#34;&#34;
@@ -111,9 +135,29 @@ not have a method with the specified name.</p></div>
         tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
 
         bot_screen = BotScreen(self.driver)
-        bot_screen.send_text(&#34;Bonjour j&#39;ai besoin d&#39;assistance&#34;)
-        bot_screen.send_text(&#34;Je crois que je me suis cassé un orteil&#34;)
-        bot_screen.send_text(&#34;Allo ?&#34;)
+        bot_screen.send_text(&#34;J&#39;ai mal&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;au pied&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;3&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;2 jours&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;oui&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;oui&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;184 cm&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;66 kg&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;non&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;Poils de chats&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;0&#34;)
+        sleep(0.5)
+        bot_screen.send_text(&#34;oui&#34;)
 
     @classmethod
     def tearDownClass(cls):
@@ -180,9 +224,29 @@ def tearDownClass(cls):
     tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
 
     bot_screen = BotScreen(self.driver)
-    bot_screen.send_text(&#34;Bonjour j&#39;ai besoin d&#39;assistance&#34;)
-    bot_screen.send_text(&#34;Je crois que je me suis cassé un orteil&#34;)
-    bot_screen.send_text(&#34;Allo ?&#34;)</code></pre>
+    bot_screen.send_text(&#34;J&#39;ai mal&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;au pied&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;3&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;2 jours&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;oui&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;oui&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;184 cm&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;66 kg&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;non&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;Poils de chats&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;0&#34;)
+    sleep(0.5)
+    bot_screen.send_text(&#34;oui&#34;)</code></pre>
 </details>
 </dd>
 </dl>

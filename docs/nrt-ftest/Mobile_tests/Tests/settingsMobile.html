@@ -27,6 +27,8 @@
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">import unittest
+from time import sleep
+
 from appium import webdriver
 from Mobile_tests.Screens.TutoScreen import TutoScreen
 from Mobile_tests.Screens.SettingsScreen import SettingsScreen
@@ -34,7 +36,7 @@ from Mobile_tests.Screens.SettingsScreen import SettingsScreen
 
 class SettingsMobileTest(unittest.TestCase):
     &#34;&#34;&#34;
-    Classe BotMobileTest.
+    Classe SettingsMobileTest.
 
     Teste les différents élements de l&#39;écran settings.
     &#34;&#34;&#34;
@@ -44,20 +46,48 @@ class SettingsMobileTest(unittest.TestCase):
         &#34;&#34;&#34;Charge le driver et l&#39;émulateur.&#34;&#34;&#34;
         desired_caps = {&#39;platformName&#39;: &#39;Android&#39;, &#39;platformVersion&#39;: &#39;11.0&#39;, &#39;automationName&#39;: &#39;uiautomator2&#39;,
                         &#39;deviceName&#39;: &#39;Android Emulator&#39;,
-                        &#39;app&#39;: r&#34;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk&#34;}
+                        &#39;app&#39;: r&#39;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk&#39;}
         cls.driver = webdriver.Remote(&#39;http://localhost:4723/wd/hub&#39;, desired_caps)
         cls.driver.implicitly_wait(5000)
 
     def test_settings(self):
-        &#34;&#34;&#34;Teste les boutons de l&#39;écrans settings.&#34;&#34;&#34;
+        &#34;&#34;&#34;Teste les boutons de l&#39;écran settings.&#34;&#34;&#34;
         tuto_screen = TutoScreen(self.driver)
         tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
         tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
         tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
         settings_screen = SettingsScreen(self.driver)
+        settings_screen.click_settings_tab()
+        settings_screen.click_language(&#34;English&#34;)
+
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
         settings_screen.click_settings_tab()
         settings_screen.click_language(&#34;Français&#34;)
 
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+        settings_screen.click_settings_tab()
+
+        settings_screen.switch_mode()
+
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
+        sleep(1)
 
     @classmethod
     def tearDownClass(cls):
@@ -79,7 +109,7 @@ class SettingsMobileTest(unittest.TestCase):
 <span>(</span><span>methodName='runTest')</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Classe BotMobileTest.</p>
+<div class="desc"><p>Classe SettingsMobileTest.</p>
 <p>Teste les différents élements de l'écran settings.</p>
 <p>Create an instance of the class that will use the named test
 method when executed. Raises a ValueError if the instance does
@@ -90,7 +120,7 @@ not have a method with the specified name.</p></div>
 </summary>
 <pre><code class="python">class SettingsMobileTest(unittest.TestCase):
     &#34;&#34;&#34;
-    Classe BotMobileTest.
+    Classe SettingsMobileTest.
 
     Teste les différents élements de l&#39;écran settings.
     &#34;&#34;&#34;
@@ -100,20 +130,48 @@ not have a method with the specified name.</p></div>
         &#34;&#34;&#34;Charge le driver et l&#39;émulateur.&#34;&#34;&#34;
         desired_caps = {&#39;platformName&#39;: &#39;Android&#39;, &#39;platformVersion&#39;: &#39;11.0&#39;, &#39;automationName&#39;: &#39;uiautomator2&#39;,
                         &#39;deviceName&#39;: &#39;Android Emulator&#39;,
-                        &#39;app&#39;: r&#34;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk&#34;}
+                        &#39;app&#39;: r&#39;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk&#39;}
         cls.driver = webdriver.Remote(&#39;http://localhost:4723/wd/hub&#39;, desired_caps)
         cls.driver.implicitly_wait(5000)
 
     def test_settings(self):
-        &#34;&#34;&#34;Teste les boutons de l&#39;écrans settings.&#34;&#34;&#34;
+        &#34;&#34;&#34;Teste les boutons de l&#39;écran settings.&#34;&#34;&#34;
         tuto_screen = TutoScreen(self.driver)
         tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
         tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
         tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
         settings_screen = SettingsScreen(self.driver)
+        settings_screen.click_settings_tab()
+        settings_screen.click_language(&#34;English&#34;)
+
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
         settings_screen.click_settings_tab()
         settings_screen.click_language(&#34;Français&#34;)
 
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+        settings_screen.click_settings_tab()
+
+        settings_screen.switch_mode()
+
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;SUIVANT&#34;)
+        sleep(0.5)
+        tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
+        sleep(1)
 
     @classmethod
     def tearDownClass(cls):
@@ -140,7 +198,7 @@ def setUpClass(cls):
     &#34;&#34;&#34;Charge le driver et l&#39;émulateur.&#34;&#34;&#34;
     desired_caps = {&#39;platformName&#39;: &#39;Android&#39;, &#39;platformVersion&#39;: &#39;11.0&#39;, &#39;automationName&#39;: &#39;uiautomator2&#39;,
                     &#39;deviceName&#39;: &#39;Android Emulator&#39;,
-                    &#39;app&#39;: r&#34;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk&#34;}
+                    &#39;app&#39;: r&#39;C:\Users\prato\Documents\Courses\Epitech\NRT-FTEST\nrt-ftest\Mobile_tests\app-release.apk&#39;}
     cls.driver = webdriver.Remote(&#39;http://localhost:4723/wd/hub&#39;, desired_caps)
     cls.driver.implicitly_wait(5000)</code></pre>
 </details>
@@ -167,20 +225,49 @@ def tearDownClass(cls):
 <span>def <span class="ident">test_settings</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Teste les boutons de l'écrans settings.</p></div>
+<div class="desc"><p>Teste les boutons de l'écran settings.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def test_settings(self):
-    &#34;&#34;&#34;Teste les boutons de l&#39;écrans settings.&#34;&#34;&#34;
+    &#34;&#34;&#34;Teste les boutons de l&#39;écran settings.&#34;&#34;&#34;
     tuto_screen = TutoScreen(self.driver)
     tuto_screen.button_click(&#34;SUIVANT&#34;)
+    sleep(0.5)
     tuto_screen.button_click(&#34;SUIVANT&#34;)
+    sleep(0.5)
     tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
     settings_screen = SettingsScreen(self.driver)
     settings_screen.click_settings_tab()
-    settings_screen.click_language(&#34;Français&#34;)</code></pre>
+    settings_screen.click_language(&#34;English&#34;)
+
+    tuto_screen.button_click(&#34;SUIVANT&#34;)
+    sleep(0.5)
+    tuto_screen.button_click(&#34;SUIVANT&#34;)
+    sleep(0.5)
+    tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
+    settings_screen.click_settings_tab()
+    settings_screen.click_language(&#34;Français&#34;)
+
+    tuto_screen.button_click(&#34;SUIVANT&#34;)
+    sleep(0.5)
+    tuto_screen.button_click(&#34;SUIVANT&#34;)
+    sleep(0.5)
+    tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+    settings_screen.click_settings_tab()
+
+    settings_screen.switch_mode()
+
+    tuto_screen.button_click(&#34;SUIVANT&#34;)
+    sleep(0.5)
+    tuto_screen.button_click(&#34;SUIVANT&#34;)
+    sleep(0.5)
+    tuto_screen.button_click(&#34;QUITTER LE TUTORIEL&#34;)
+
+    sleep(1)</code></pre>
 </details>
 </dd>
 </dl>
